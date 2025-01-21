@@ -52,7 +52,7 @@ def Add_data():
         rows = cursor.fetchall()
         for row in rows:
             print(row)
-        ui.Log.setText(str("Update Ok"))
+        ui.Log.setText(str("Update success"))
         calldata()
 
     except sqlite3.IntegrityError as e:
@@ -81,8 +81,7 @@ def clear(x):
     if x == 1:
         ui.Log.setText("")
 def clear_bt():
-    clear(1)
-    calldata()
+    clear(1);calldata()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)  # Create the main application object
