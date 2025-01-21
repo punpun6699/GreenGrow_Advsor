@@ -33,7 +33,7 @@ def openPlantdata():
     """
     try:
         result = subprocess.run(
-            ["python", "/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_app/PopUP_app/data_popup_app/plant_data.py"],
+            ["python","/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_app/PopUP_app/data_popup_app/plant_data.py"],
             capture_output=True,
             text=True
         )

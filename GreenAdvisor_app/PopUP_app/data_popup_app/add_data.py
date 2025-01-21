@@ -52,7 +52,7 @@ def Add_data():
         rows = cursor.fetchall()
         for row in rows:
             print(row)
-        ui.Log.setText(str("Update success"))
+        ui.Log.setText(str("Update success."))
         calldata()
 
     except sqlite3.IntegrityError as e:

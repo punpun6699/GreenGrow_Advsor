@@ -42,6 +42,17 @@ class Ui_Form(object):
                         """)
         self.Cls_pushButton = QtWidgets.QPushButton(Form);self.Cls_pushButton.setGeometry(QtCore.QRect(200, 200, 101, 61));self.Cls_pushButton.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(Form);self.pushButton_3.setGeometry(QtCore.QRect(340, 200, 101, 61));self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_3.setStyleSheet("""
+                   QPushButton {
+                       background-color: red; /* Red background */
+                       color: white;          /* White text */
+                       border: none;
+                       font-weight: bold;
+                   }
+                   QPushButton:hover {
+                       background-color: darkred; /* Dark red on hover */
+                   }
+               """)
 
 
         self.retranslateUi(Form)
