@@ -1,7 +1,6 @@
-import sys,sqlite3
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableView, QTableWidgetItem
-from PyQt5.QtSql import QSqlDatabase, QSqlQuery
-from GreenAdvisor_UI.ui import plant_data_ui  # Import UI from .ui file
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from GreenAdvisor_UI import plant_data_ui
 import sqlite3  # For SQLite connection
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 

@@ -1,6 +1,8 @@
 import sys,subprocess,joblib
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from GreenAdvisor_UI.ui import main_ui
+from GreenAdvisor_UI import main_ui
+
+
 def getdata(): #get the data if all data is float use  usemodel fn
     try:
         UV_index =float(ui.textEdit_UV_index.document().toPlainText())

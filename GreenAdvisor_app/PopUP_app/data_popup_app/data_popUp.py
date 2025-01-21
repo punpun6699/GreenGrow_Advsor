@@ -1,7 +1,6 @@
 import sys,subprocess,sqlite3
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableView, QTableWidgetItem
-from PyQt5.QtSql import QSqlDatabase, QSqlQuery
-from GreenAdvisor_UI.ui import data_ui  # Import UI from .ui file
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from GreenAdvisor_UI import data_ui
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 
 def load_data_into_table(table_view):
