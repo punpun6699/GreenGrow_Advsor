@@ -41,6 +41,20 @@ def openPlantdata():
         print("Script Errors from openPlantdata:", result.stderr)
     except Exception as e:
         print(f"Error running openPlantdata(): \n{e}")
+def Open_Add_data_ui():
+    """
+    เรียกใช้โปรแกรม plant_data.py โดยใช้เส้นทางในโฟลเดอร์ปัจจุบัน
+    """
+    try:
+        result = subprocess.run(
+            ["python", "/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_app/PopUP_app/data_popup_app/add_data.py"],
+            capture_output=True,
+            text=True
+        )
+        print("Script Output from openPlantdata:", result.stdout)
+        print("Script Errors from openPlantdata:", result.stderr)
+    except Exception as e:
+        print(f"Error running openPlantdata(): \n{e}")
 
 if __name__ == '__main__':
     print("data_popUp run")
@@ -52,5 +66,6 @@ if __name__ == '__main__':
     load_data_into_table(ui.tableView)  # Use 'tableView' from your UI file
     win.show()  # Show the main window
     ui.data_Button.clicked.connect(openPlantdata)
+    ui.Add_data_Button.clicked.connect(Open_Add_data_ui)
     # Execute the application
     sys.exit(app.exec_())
