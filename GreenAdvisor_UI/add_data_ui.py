@@ -22,15 +22,15 @@ class Ui_Form(object):
         self.label_4 = QtWidgets.QLabel(Form);self.label_4.setGeometry(QtCore.QRect(320, 80, 71, 31));self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(Form);self.label_5.setGeometry(QtCore.QRect(30, 140, 71, 31));self.label_5.setObjectName("label_5")
         #textEdit
-        self.textEdit = QtWidgets.QTextEdit(Form);self.textEdit.setGeometry(QtCore.QRect(100, 30, 161, 31));self.textEdit.setObjectName("textEdit");self.textEdit.setReadOnly(True)
-        self.textEdit_2 = QtWidgets.QTextEdit(Form);self.textEdit_2.setGeometry(QtCore.QRect(100, 80, 161, 31));self.textEdit_2.setObjectName("textEdit_2")
-        self.textEdit_3 = QtWidgets.QTextEdit(Form);self.textEdit_3.setGeometry(QtCore.QRect(380, 30, 161, 31));self.textEdit_3.setObjectName("textEdit_3")
-        self.textEdit_4 = QtWidgets.QTextEdit(Form);self.textEdit_4.setGeometry(QtCore.QRect(380, 80, 161, 31));self.textEdit_4.setObjectName("textEdit_4")
+        self.Plant_ID_textEdit = QtWidgets.QTextEdit(Form);self.Plant_ID_textEdit.setGeometry(QtCore.QRect(100, 30, 161, 31));self.Plant_ID_textEdit.setObjectName("Plant_ID_textEdit");self.Plant_ID_textEdit.setReadOnly(True)
+        self.Type_textEdit = QtWidgets.QTextEdit(Form);self.Type_textEdit.setGeometry(QtCore.QRect(100, 80, 161, 31));self.Type_textEdit.setObjectName("Type_textEdit")
+        self.Name_textEdit = QtWidgets.QTextEdit(Form);self.Name_textEdit.setGeometry(QtCore.QRect(380, 30, 161, 31));self.Name_textEdit.setObjectName("Name_textEdit")
+        self.Age_textEdit = QtWidgets.QTextEdit(Form);self.Age_textEdit.setGeometry(QtCore.QRect(380, 80, 161, 31));self.Age_textEdit.setObjectName("Age_textEdit")
+        self.Log = QtWidgets.QTextEdit(Form);self.Log.setGeometry(QtCore.QRect(120, 140, 391, 31));self.Log.setObjectName("Log");self.Log.setReadOnly(True)
         #pushButton
-        self.pushButton = QtWidgets.QPushButton(Form);self.pushButton.setGeometry(QtCore.QRect(80, 200, 101, 61));self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(Form);self.pushButton_2.setGeometry(QtCore.QRect(200, 200, 101, 61));self.pushButton_2.setObjectName("pushButton_2")
+        self.Add_pushButton = QtWidgets.QPushButton(Form);self.Add_pushButton.setGeometry(QtCore.QRect(80, 200, 101, 61));self.Add_pushButton.setObjectName("pushButton")
+        self.Cls_pushButton = QtWidgets.QPushButton(Form);self.Cls_pushButton.setGeometry(QtCore.QRect(200, 200, 101, 61));self.Cls_pushButton.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(Form);self.pushButton_3.setGeometry(QtCore.QRect(340, 200, 101, 61));self.pushButton_3.setObjectName("pushButton_3")
-        self.textEdit_5 = QtWidgets.QTextEdit(Form);self.textEdit_5.setGeometry(QtCore.QRect(120, 140, 391, 31));self.textEdit_5.setObjectName("textEdit_5")
 
 
         self.retranslateUi(Form)
@@ -43,8 +43,8 @@ class Ui_Form(object):
         self.label_2.setText(_translate("Form", "Name"))
         self.label_3.setText(_translate("Form", "Type"))
         self.label_4.setText(_translate("Form", "Age"))
-        self.pushButton.setText(_translate("Form", "PushButton"))
-        self.pushButton_2.setText(_translate("Form", "PushButton"))
+        self.Add_pushButton.setText(_translate("Form", "Add"))
+        self.Cls_pushButton.setText(_translate("Form", "clear"))
         self.pushButton_3.setText(_translate("Form", "PushButton"))
         self.label_5.setText(_translate("Form", "log"))
 
