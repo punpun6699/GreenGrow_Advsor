@@ -59,6 +59,7 @@ def main():
     if len(sys.argv) > 1:
         plant_id = sys.argv[1]
         print(f"Received plant_ID: {plant_id}")
+        ui.plant_ID_textEdit.setText(str(plant_id))
 
         # Fetch and process data
         data = get_plant_data(plant_id)
