@@ -3,6 +3,8 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from GreenAdvisor_UI import add_data_ui
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 
+def exit_with_code():
+    app.exit(0)  # Exit with status code 0
 def calldata():
     # เชื่อมต่อฐานข้อมูล
     conn = sqlite3.connect('/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/Main_data.db')  # Database path
@@ -93,5 +95,6 @@ if __name__ == '__main__':
     win.show()  # Show the main window
     ui.Add_pushButton.clicked.connect(Add_data)
     ui.Cls_pushButton.clicked.connect(clear_bt)
+    ui.pushButton_3.clicked.connect(exit_with_code)
     # Execute the application
     sys.exit(app.exec_())

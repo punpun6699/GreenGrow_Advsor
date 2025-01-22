@@ -1,7 +1,7 @@
 import sqlite3
 
 # Connect to the SQLite database
-conn = sqlite3.connect('/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/Main_data.db')
+conn = sqlite3.connect('/Database/Main_data.db')
 
 # Create a cursor object to interact with the database
 cursor = conn.cursor()
