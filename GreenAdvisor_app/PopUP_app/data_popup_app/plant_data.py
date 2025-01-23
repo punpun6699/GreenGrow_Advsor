@@ -4,29 +4,41 @@ from GreenAdvisor_UI import plant_data_ui
 import sqlite3  # For SQLite connection
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 
-def load_data_into_table(table_view):
+def load_data_into_table(table_view, plant_id):
+    """
+    Load data into the QTableView for the specified plant_id.
+    """
     # Connect to the SQLite database
     conn = sqlite3.connect('/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/Main_data.db')  # Database path
     cursor = conn.cursor()
 
-    # Fetch data from the Main_data table
-    cursor.execute("SELECT * FROM plant_data")
-    rows = cursor.fetchall()
+    try:
+        # Fetch data for the specific plant_id from the plant_data table
+        cursor.execute("SELECT * FROM plant_data WHERE Plant_id = ?", (plant_id,))
+        rows = cursor.fetchall()
 
-    # Set up the model for the QTableView
-    model = QStandardItemModel()
-    model.setHorizontalHeaderLabels(["Case_id", "Type", "Plant_id"])  # Set column headers
+        # Set up the model for the QTableView
+        model = QStandardItemModel()
+        model.setHorizontalHeaderLabels(["Case_id", "Type", "Plant_id"])  # Set column headers
 
-    # Populate the model with data from the database
-    for row in rows:
-        items = [QStandardItem(str(value)) for value in row]
-        model.appendRow(items)
+        # Populate the model with data from the database
+        for row in rows:
+            items = [QStandardItem(str(value)) for value in row]
+            model.appendRow(items)
 
-    # Set the model for the QTableView
-    table_view.setModel(model)
+        # Set the model for the QTableView
+        table_view.setModel(model)
 
-    # Close the database connection
-    conn.close()
+        if not rows:
+            print(f"No data found for Plant_id: {plant_id}")
+
+    except sqlite3.Error as e:
+        print(f"Database error: {e}")
+
+    finally:
+        # Close the database connection
+        conn.close()
+
 def get_plant_data(plant_id):
     """
     Fetch data for the specified plant_ID from the database.
@@ -66,10 +78,21 @@ def main():
         if data:
             # Example: process or display the data
             print(f"Fetched Data: {data}")
+            ui.Name_textEdit.setText(str(data[2]))
+            ui.Type_textEdit.setText(str(data[1]))
+            ui.Age_textEdit.setText(str(data[3]))
         else:
             print("No data to display.")
+        load_data_into_table(ui.tableView, plant_id)
     else:
         print("No plant_ID provided.")
+
+
+def update_data():
+    Name = str(ui.Name_textEdit.document().toPlainText())
+    Type = str(ui.Type_textEdit.document().toPlainText())
+    Age = int(ui.Age_textEdit.document().toPlainText())
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)  # Create the main application object
@@ -78,7 +101,7 @@ if __name__ == '__main__':
     ui.setupUi(win)  # Set up the UI elements in the main window
     main()
     # Load data into the QTableView after setting up the UI
-    load_data_into_table(ui.tableView)  # Use 'tableView' from your UI file
+   # load_data_into_table(ui.tableView)  # Use 'tableView' from your UI file
     win.show()  # Show the main window
 
     # Execute the application

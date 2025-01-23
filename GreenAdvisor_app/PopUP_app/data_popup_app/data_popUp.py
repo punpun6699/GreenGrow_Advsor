@@ -1,8 +1,7 @@
 import sys, subprocess, sqlite3
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableView
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from GreenAdvisor_UI import data_ui
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
-from PyQt5.QtCore import QItemSelectionModel
 
 def load_data_into_table(table_view):
     # Connect to the SQLite database
@@ -116,6 +115,40 @@ def delete_selected_data():
     else:
         print("No row selected to delete.")
 
+def seach(table_view):
+    seach_id = str(ui.textEdit.document().toPlainText())
+    conn = sqlite3.connect('/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/Main_data.db')  # Database path
+    cursor = conn.cursor()
+
+    try:
+        # Fetch data for the specific plant_id from the plant_data table
+        cursor.execute("SELECT * FROM Main_data WHERE Plant_id = ?", (seach_id,))
+        rows = cursor.fetchall()
+
+        # Set up the model for the QTableView
+        model = QStandardItemModel()
+        model.setHorizontalHeaderLabels(["plant_ID", "Name", "Type", "Age"])  # Set column headers
+
+        # Populate the model with data from the database
+        for row in rows:
+            items = [QStandardItem(str(value)) for value in row]
+            model.appendRow(items)
+
+        # Set the model for the QTableView
+        table_view.setModel(model)
+
+        if not rows:
+            print(f"No data found for Plant_id: {seach_id}")
+
+    except sqlite3.Error as e:
+        print(f"Database error: {e}")
+
+    finally:
+        # Close the database connection
+        conn.close()
+def seach_ck():
+    seach(ui.tableView)
+
 if __name__ == '__main__':
     print("data_popUp run")
     app = QApplication(sys.argv)  # Create the main application object
@@ -131,6 +164,8 @@ if __name__ == '__main__':
     ui.data_Button.clicked.connect(openPlantdata)
     ui.Add_data_Button.clicked.connect(Open_Add_data_ui)
     ui.Dell_Button.clicked.connect(delete_selected_data)
+    ui.reload_Button.clicked.connect(reload)
+    ui.seach_Button.clicked.connect(seach_ck)
     # Connect the selection change to a function that gets the selected plant_ID
 
     # Execute the application

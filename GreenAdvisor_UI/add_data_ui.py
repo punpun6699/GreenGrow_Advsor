@@ -28,7 +28,7 @@ class Ui_Form(object):
         self.Age_textEdit = QtWidgets.QTextEdit(Form);self.Age_textEdit.setGeometry(QtCore.QRect(380, 80, 161, 31));self.Age_textEdit.setObjectName("Age_textEdit")
         self.Log = QtWidgets.QTextEdit(Form);self.Log.setGeometry(QtCore.QRect(120, 140, 391, 31));self.Log.setObjectName("Log");self.Log.setReadOnly(True)
         #pushButton
-        self.Add_pushButton = QtWidgets.QPushButton(Form);self.Add_pushButton.setGeometry(QtCore.QRect(80, 200, 101, 61));self.Add_pushButton.setObjectName("pushButton")
+        self.Add_pushButton = QtWidgets.QPushButton(Form);self.Add_pushButton.setGeometry(QtCore.QRect(100, 200, 101, 61));self.Add_pushButton.setObjectName("pushButton")
         self.Add_pushButton.setStyleSheet("""
                             QPushButton {
                                 background-color: blue; 
@@ -40,8 +40,19 @@ class Ui_Form(object):
                                 background-color: darkblue;
                             }
                         """)
-        self.Cls_pushButton = QtWidgets.QPushButton(Form);self.Cls_pushButton.setGeometry(QtCore.QRect(200, 200, 101, 61));self.Cls_pushButton.setObjectName("pushButton_2")
-        self.pushButton_3 = QtWidgets.QPushButton(Form);self.pushButton_3.setGeometry(QtCore.QRect(340, 200, 101, 61));self.pushButton_3.setObjectName("pushButton_3")
+        self.Cls_pushButton = QtWidgets.QPushButton(Form);self.Cls_pushButton.setGeometry(QtCore.QRect(235, 200, 101, 61));self.Cls_pushButton.setObjectName("pushButton_2")
+        self.Cls_pushButton.setStyleSheet("""
+                                    QPushButton {
+                                        background-color: green; 
+                                        color: white;          /* White text */
+                                        border: none;
+                                        font-weight: bold;
+                                    }
+                                    QPushButton:hover {
+                                        background-color: darkgreen;
+                                    }
+                                """)
+        self.pushButton_3 = QtWidgets.QPushButton(Form);self.pushButton_3.setGeometry(QtCore.QRect(370, 200, 101, 61));self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_3.setStyleSheet("""
                    QPushButton {
                        background-color: red; /* Red background */

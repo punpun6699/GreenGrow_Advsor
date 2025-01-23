@@ -25,10 +25,11 @@ class Ui_Form(object):
         self.label_2 = QtWidgets.QLabel(Form);self.label_2.setGeometry(QtCore.QRect(320, 30, 71, 31));self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(Form);self.label_3.setGeometry(QtCore.QRect(20, 80, 71, 31));self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(Form);self.label_4.setGeometry(QtCore.QRect(320, 80, 71, 31));self.label_4.setObjectName("label_4")
+
         self.plant_ID_textEdit = QtWidgets.QTextEdit(Form);self.plant_ID_textEdit.setGeometry(QtCore.QRect(100, 30, 161, 31));self.plant_ID_textEdit.setObjectName("textEdit");self.plant_ID_textEdit.setReadOnly(True)
-        self.textEdit_2 = QtWidgets.QTextEdit(Form);self.textEdit_2.setGeometry(QtCore.QRect(100, 80, 161, 31));self.textEdit_2.setObjectName("textEdit_2")
-        self.textEdit_3 = QtWidgets.QTextEdit(Form);self.textEdit_3.setGeometry(QtCore.QRect(380, 30, 161, 31));self.textEdit_3.setObjectName("textEdit_3")
-        self.textEdit_4 = QtWidgets.QTextEdit(Form);self.textEdit_4.setGeometry(QtCore.QRect(380, 80, 161, 31));self.textEdit_4.setObjectName("textEdit_4")
+        self.Name_textEdit = QtWidgets.QTextEdit(Form);self.Name_textEdit.setGeometry(QtCore.QRect(100, 80, 161, 31));self.Name_textEdit.setObjectName("Name_textEdit")
+        self.Type_textEdit = QtWidgets.QTextEdit(Form);self.Type_textEdit.setGeometry(QtCore.QRect(380, 30, 161, 31));self.Type_textEdit.setObjectName("textEdit_3")
+        self.Age_textEdit = QtWidgets.QTextEdit(Form);self.Age_textEdit.setGeometry(QtCore.QRect(380, 80, 161, 31));self.Age_textEdit.setObjectName("textEdit_4")
 
         self.retranslateUi(Form);QtCore.QMetaObject.connectSlotsByName(Form)
 

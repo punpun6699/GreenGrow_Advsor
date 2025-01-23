@@ -34,12 +34,9 @@ class Ui_Form(object):
         # ตั้ง model ให้กับ QTableView
         self.tableView.setModel(self.model)
 
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(30, 80, 58, 16))
-        self.label.setObjectName("label")
-        self.Add_data_Button = QtWidgets.QPushButton(Form)
-        self.Add_data_Button.setGeometry(QtCore.QRect(30, 380, 111, 51))
-        self.Add_data_Button.setObjectName("Add_data_Button")
+        self.label = QtWidgets.QLabel(Form);self.label.setGeometry(QtCore.QRect(30, 80, 58, 16));self.label.setObjectName("label")
+        #Button
+        self.Add_data_Button = QtWidgets.QPushButton(Form);self.Add_data_Button.setGeometry(QtCore.QRect(30, 380, 111, 51));self.Add_data_Button.setObjectName("Add_data_Button")
         self.Add_data_Button.setStyleSheet("""
                     QPushButton {
                         background-color: blue; /* Red background */
@@ -51,9 +48,7 @@ class Ui_Form(object):
                         background-color: darkblue; /* Dark red on hover */
                     }
                 """)
-        self.Dell_Button = QtWidgets.QPushButton(Form)
-        self.Dell_Button.setGeometry(QtCore.QRect(420, 380, 111, 51))
-        self.Dell_Button.setObjectName("Dell_Button")
+        self.Dell_Button = QtWidgets.QPushButton(Form);self.Dell_Button.setGeometry(QtCore.QRect(420, 380, 111, 51));self.Dell_Button.setObjectName("Dell_Button")
         self.Dell_Button.setStyleSheet("""
             QPushButton {
                 background-color: red; /* Red background */
@@ -65,21 +60,12 @@ class Ui_Form(object):
                 background-color: darkred; /* Dark red on hover */
             }
         """)
-        self.data_Button = QtWidgets.QPushButton(Form)
-        self.data_Button.setGeometry(QtCore.QRect(160, 380, 111, 51))
-        self.data_Button.setObjectName("data_Button")
-        self.textEdit = QtWidgets.QTextEdit(Form)
-        self.textEdit.setGeometry(QtCore.QRect(90, 70, 321, 31))
-        self.textEdit.setObjectName("textEdit")
-        self.data_Button_2 = QtWidgets.QPushButton(Form)
-        self.data_Button_2.setGeometry(QtCore.QRect(430, 60, 111, 51))
-        self.data_Button_2.setObjectName("data_Button_2")
-        self.data_Button_3 = QtWidgets.QPushButton(Form)
-        self.data_Button_3.setGeometry(QtCore.QRect(290, 380, 111, 51))
-        self.data_Button_3.setObjectName("data_Button_3")
-        self.label_2 = QtWidgets.QLabel(Form)
-        self.label_2.setGeometry(QtCore.QRect(180, 20, 161, 41))
-        self.label_2.setObjectName("label_2")
+        self.data_Button = QtWidgets.QPushButton(Form);self.data_Button.setGeometry(QtCore.QRect(160, 380, 111, 51));self.data_Button.setObjectName("data_Button")
+        self.seach_Button = QtWidgets.QPushButton(Form);self.seach_Button.setGeometry(QtCore.QRect(430, 60, 111, 51));self.seach_Button.setObjectName("data_Button_2")
+        self.reload_Button = QtWidgets.QPushButton(Form);self.reload_Button.setGeometry(QtCore.QRect(290, 380, 111, 51));self.reload_Button.setObjectName("data_Button_3")
+        self.textEdit = QtWidgets.QTextEdit(Form);self.textEdit.setGeometry(QtCore.QRect(90, 70, 321, 31));self.textEdit.setObjectName("textEdit")
+        #label
+        self.label_2 = QtWidgets.QLabel(Form);self.label_2.setGeometry(QtCore.QRect(180, 20, 161, 41));self.label_2.setObjectName("label_2")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -91,8 +77,8 @@ class Ui_Form(object):
         self.Add_data_Button.setText(_translate("Form", "add data"))
         self.Dell_Button.setText(_translate("Form", "Dell"))
         self.data_Button.setText(_translate("Form", "Show Data"))
-        self.data_Button_2.setText(_translate("Form", "ssh"))
-        self.data_Button_3.setText(_translate("Form", "ssh"))
+        self.seach_Button.setText(_translate("Form", "seach"))
+        self.reload_Button.setText(_translate("Form", "Reload"))
         self.label_2.setText(_translate("Form", "DATA"))
 
 

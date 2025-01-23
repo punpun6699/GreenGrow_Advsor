@@ -1,8 +1,6 @@
-import sys,subprocess,sqlite3
+import sys,sqlite3
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from GreenAdvisor_UI import add_data_ui
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
-
 def exit_with_code():
     app.exit(0)  # Exit with status code 0
 def calldata():

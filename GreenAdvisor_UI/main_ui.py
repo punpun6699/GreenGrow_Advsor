@@ -30,7 +30,6 @@ class Ui_Form(object):
         self.pushButton_cal.setStyleSheet("""QPushButton {background-color: blue;color: white;border: none;font-weight: bold;}QPushButton:hover {background-color: darkblue; }""")
         self.pushButton_cls = QtWidgets.QPushButton(Form);self.pushButton_cls.setGeometry(QtCore.QRect(360, 100, 121, 61));self.pushButton_cls.setObjectName("pushButton_cls")
         self.pushButton_data = QtWidgets.QPushButton(Form);self.pushButton_data.setGeometry(QtCore.QRect(360, 170, 121, 61));self.pushButton_data.setObjectName("pushButton_data")
-
         #textEdit
         self.textEdit_UV_index = QtWidgets.QTextEdit(Form);self.textEdit_UV_index.setGeometry(QtCore.QRect(180, 40, 121, 31));self.textEdit_UV_index.setObjectName("textEdit_UV_index")
         self.textEdit_Temperature = QtWidgets.QTextEdit(Form);self.textEdit_Temperature.setGeometry(QtCore.QRect(180, 80, 121, 31));self.textEdit_Temperature.setObjectName("textEdit_Temperature")
