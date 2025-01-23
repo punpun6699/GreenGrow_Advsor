@@ -77,8 +77,8 @@ class Ui_Form(object):
         self.label_3.setText(_translate("Form", "Type"))
         self.label_4.setText(_translate("Form", "Age"))
         self.Add_pushButton.setText(_translate("Form", "Add"))
-        self.Cls_pushButton.setText(_translate("Form", "clear"))
-        self.pushButton_3.setText(_translate("Form", "PushButton"))
+        self.Cls_pushButton.setText(_translate("Form", "Clear"))
+        self.pushButton_3.setText(_translate("Form", "Close"))
         self.label_5.setText(_translate("Form", "log"))
 
 
