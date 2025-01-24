@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtWidgets
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        Form.setObjectName("Form")
+        Form.setObjectName("GreenGrow Advisor")
         Form.resize(500, 554)
         #label
         self.label_UV_index = QtWidgets.QLabel(Form);self.label_UV_index.setGeometry(QtCore.QRect(40, 40, 108, 16));self.label_UV_index.setObjectName("label_UV_index")
@@ -47,7 +47,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Plant Recommendation"))
+        Form.setWindowTitle(_translate("Form", "GreenGrow Advisor"))
         # set label text
         self.label_UV_index.setText(_translate("Form", "UV_index:"))
         self.label_Temperature.setText(_translate("Form", "Temperature :"))

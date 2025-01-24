@@ -13,11 +13,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        Form.setObjectName("Form")
+        Form.setObjectName("Plant Data")
         Form.resize(573, 465)
-        self.tableView = QtWidgets.QTableView(Form);self.tableView.setGeometry(QtCore.QRect(20, 130, 521, 261));self.tableView.setObjectName("tableView")
-        self.pushButton = QtWidgets.QPushButton(Form);self.pushButton.setGeometry(QtCore.QRect(30, 400, 111, 51));self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(Form);self.pushButton_2.setGeometry(QtCore.QRect(160, 400, 111, 51));self.pushButton_2.setObjectName("pushButton_2")
+        self.tableView = QtWidgets.QTableView(Form);self.tableView.setGeometry(QtCore.QRect(20, 160, 521, 231));self.tableView.setObjectName("tableView")
+        self.Edit_data_Button = QtWidgets.QPushButton(Form);self.Edit_data_Button.setGeometry(QtCore.QRect(30, 400, 111, 51));self.Edit_data_Button.setObjectName("pushButton")
+        self.Add_case_data_Button = QtWidgets.QPushButton(Form);self.Add_case_data_Button.setGeometry(QtCore.QRect(160, 400, 111, 51));self.Add_case_data_Button.setObjectName("Add_case_data_Button")
         self.pushButton_3 = QtWidgets.QPushButton(Form);self.pushButton_3.setGeometry(QtCore.QRect(290, 400, 111, 51));self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(Form);self.pushButton_4.setGeometry(QtCore.QRect(420, 400, 111, 51));self.pushButton_4.setObjectName("pushButton_4")
         self.label = QtWidgets.QLabel(Form);self.label.setGeometry(QtCore.QRect(20, 30, 71, 31));self.label.setObjectName("label")
@@ -25,19 +25,23 @@ class Ui_Form(object):
         self.label_2 = QtWidgets.QLabel(Form);self.label_2.setGeometry(QtCore.QRect(320, 30, 71, 31));self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(Form);self.label_3.setGeometry(QtCore.QRect(20, 80, 71, 31));self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(Form);self.label_4.setGeometry(QtCore.QRect(320, 80, 71, 31));self.label_4.setObjectName("label_4")
+        self.label_4 = QtWidgets.QLabel(Form);self.label_4.setGeometry(QtCore.QRect(320, 80, 71, 31));self.label_4.setObjectName("label_4")
+
 
         self.plant_ID_textEdit = QtWidgets.QTextEdit(Form);self.plant_ID_textEdit.setGeometry(QtCore.QRect(100, 30, 161, 31));self.plant_ID_textEdit.setObjectName("textEdit");self.plant_ID_textEdit.setReadOnly(True)
         self.Name_textEdit = QtWidgets.QTextEdit(Form);self.Name_textEdit.setGeometry(QtCore.QRect(100, 80, 161, 31));self.Name_textEdit.setObjectName("Name_textEdit")
         self.Type_textEdit = QtWidgets.QTextEdit(Form);self.Type_textEdit.setGeometry(QtCore.QRect(380, 30, 161, 31));self.Type_textEdit.setObjectName("textEdit_3")
         self.Age_textEdit = QtWidgets.QTextEdit(Form);self.Age_textEdit.setGeometry(QtCore.QRect(380, 80, 161, 31));self.Age_textEdit.setObjectName("textEdit_4")
+        self.log_textEdit = QtWidgets.QTextEdit(Form);self.log_textEdit.setGeometry(QtCore.QRect(20, 120, 521, 31));self.log_textEdit.setObjectName("textEdit");self.log_textEdit.setReadOnly(True)
+
 
         self.retranslateUi(Form);QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.pushButton.setText(_translate("Form", "PushButton"))
-        self.pushButton_2.setText(_translate("Form", "Add_data"))
+        Form.setWindowTitle(_translate("Form", "Plant Data"))
+        self.Edit_data_Button.setText(_translate("Form", "Edit_data"))
+        self.Add_case_data_Button.setText(_translate("Form", "Add_data"))
         self.pushButton_3.setText(_translate("Form", "PushButton"))
         self.pushButton_4.setText(_translate("Form", "PushButton"))
         self.label.setText(_translate("Form", "plant_ID"))

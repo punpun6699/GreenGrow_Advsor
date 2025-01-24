@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        Form.setObjectName("Form")
+        Form.setObjectName("Data")
         Form.resize(561, 438)
         self.tableView = QtWidgets.QTableView(Form)
         self.tableView.setGeometry(QtCore.QRect(30, 110, 511, 261))
@@ -25,13 +25,6 @@ class Ui_Form(object):
         # ตั้งค่าคอลัมน์ (Header)
         self.model.setHorizontalHeaderLabels(["plant_ID", "Name", "Type","age"])
 
-        # # ใส่ข้อมูลในแต่ละเซลล์
-        # for row in range(5):  # สร้าง 5 แถว
-        #     for column in range(3):  # สร้าง 3 คอลัมน์
-        #         item = QtGui.QStandardItem(f"Data {row + 1}, {column + 1}")
-        #         self.model.setItem(row, column, item)
-
-        # ตั้ง model ให้กับ QTableView
         self.tableView.setModel(self.model)
 
         self.label = QtWidgets.QLabel(Form);self.label.setGeometry(QtCore.QRect(30, 80, 58, 16));self.label.setObjectName("label")
@@ -65,21 +58,21 @@ class Ui_Form(object):
         self.reload_Button = QtWidgets.QPushButton(Form);self.reload_Button.setGeometry(QtCore.QRect(290, 380, 111, 51));self.reload_Button.setObjectName("data_Button_3")
         self.textEdit = QtWidgets.QTextEdit(Form);self.textEdit.setGeometry(QtCore.QRect(90, 70, 321, 31));self.textEdit.setObjectName("textEdit")
         #label
-        self.label_2 = QtWidgets.QLabel(Form);self.label_2.setGeometry(QtCore.QRect(180, 20, 161, 41));self.label_2.setObjectName("label_2")
+        self.label_2 = QtWidgets.QLabel(Form);self.label_2.setGeometry(QtCore.QRect(250, 20, 161, 41));self.label_2.setObjectName("label_2")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "Data"))
         self.label.setText(_translate("Form", "plant id"))
         self.Add_data_Button.setText(_translate("Form", "add data"))
         self.Dell_Button.setText(_translate("Form", "Dell"))
         self.data_Button.setText(_translate("Form", "Show Data"))
         self.seach_Button.setText(_translate("Form", "seach"))
         self.reload_Button.setText(_translate("Form", "Reload"))
-        self.label_2.setText(_translate("Form", "DATA"))
+        self.label_2.setText(_translate("Form", "Plant info"))
 
 
 if __name__ == "__main__":
