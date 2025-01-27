@@ -18,8 +18,19 @@ class Ui_Form(object):
         self.tableView = QtWidgets.QTableView(Form);self.tableView.setGeometry(QtCore.QRect(20, 160, 521, 231));self.tableView.setObjectName("tableView")
         self.Edit_data_Button = QtWidgets.QPushButton(Form);self.Edit_data_Button.setGeometry(QtCore.QRect(30, 400, 111, 51));self.Edit_data_Button.setObjectName("pushButton")
         self.Add_case_data_Button = QtWidgets.QPushButton(Form);self.Add_case_data_Button.setGeometry(QtCore.QRect(160, 400, 111, 51));self.Add_case_data_Button.setObjectName("Add_case_data_Button")
-        self.pushButton_3 = QtWidgets.QPushButton(Form);self.pushButton_3.setGeometry(QtCore.QRect(290, 400, 111, 51));self.pushButton_3.setObjectName("pushButton_3")
-        self.pushButton_4 = QtWidgets.QPushButton(Form);self.pushButton_4.setGeometry(QtCore.QRect(420, 400, 111, 51));self.pushButton_4.setObjectName("pushButton_4")
+        self.reload_Button = QtWidgets.QPushButton(Form);self.reload_Button.setGeometry(QtCore.QRect(290, 400, 111, 51));self.reload_Button.setObjectName("reload_Button")
+        self.Dell_Button = QtWidgets.QPushButton(Form);self.Dell_Button.setGeometry(QtCore.QRect(420, 400, 111, 51));self.Dell_Button.setObjectName("Dell_Button")
+        self.Dell_Button.setStyleSheet("""
+                    QPushButton {
+                        background-color: red; /* Red background */
+                        color: white;          /* White text */
+                        border: none;
+                        font-weight: bold;
+                    }
+                    QPushButton:hover {
+                        background-color: darkred; /* Dark red on hover */
+                    }
+                """)
         self.label = QtWidgets.QLabel(Form);self.label.setGeometry(QtCore.QRect(20, 30, 71, 31));self.label.setObjectName("label")
 
         self.label_2 = QtWidgets.QLabel(Form);self.label_2.setGeometry(QtCore.QRect(320, 30, 71, 31));self.label_2.setObjectName("label_2")
@@ -42,8 +53,8 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Plant Data"))
         self.Edit_data_Button.setText(_translate("Form", "Edit_data"))
         self.Add_case_data_Button.setText(_translate("Form", "Add_data"))
-        self.pushButton_3.setText(_translate("Form", "PushButton"))
-        self.pushButton_4.setText(_translate("Form", "PushButton"))
+        self.Dell_Button.setText(_translate("Form", "Dell_data"))
+        self.reload_Button.setText(_translate("Form", "reload_Button"))
         self.label.setText(_translate("Form", "plant_ID"))
         self.label_2.setText(_translate("Form", "Name"))
         self.label_3.setText(_translate("Form", "Type"))

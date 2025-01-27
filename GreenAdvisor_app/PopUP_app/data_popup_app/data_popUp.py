@@ -1,5 +1,5 @@
 import sys, subprocess, sqlite3
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow , QMessageBox
 from GreenAdvisor_UI import data_ui
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 
@@ -88,32 +88,51 @@ def delete_selected_data():
     """
     # Get the selected plant_ID
     plant_id = get_selected_plant_id(ui.tableView)
-    if plant_id:
-        try:
-            # Connect to the SQLite database
-            conn = sqlite3.connect('/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/Main_data.db')  # Database path
-            cursor = conn.cursor()
+    if not plant_id:
+        QMessageBox.warning(None, "No Selection", "กรุณาเลือกข้อมูลที่ต้องการลบก่อน!")
+        return
 
-            # Execute the DELETE query
-            cursor.execute("DELETE FROM Main_data WHERE plant_ID = ?", (plant_id,))
-            conn.commit()  # Commit the changes
+        # Confirm deletion with a QMessageBox
+    confirm = QMessageBox.question(
+        None,  # Parent widget, ใช้ None หากไม่ต้องการ parent
+        "Confirm Deletion",  # Title
+        f"คุณต้องการลบข้อมูลที่มี case_id: {plant_id} จริงหรือไม่?",  # Message
+        QMessageBox.Yes | QMessageBox.No,  # Buttons
+        QMessageBox.No  # Default button
+    )
 
-            # Check if rows were deleted
-            if cursor.rowcount > 0:
-                print(f"Deleted plant_ID: {plant_id}")
-            else:
-                print(f"No row found with plant_ID: {plant_id}")
+    if confirm == QMessageBox.No:
+        print("Deletion canceled.")
+        return
 
-            # Reload the table data to reflect the changes
-            load_data_into_table(ui.tableView)
+    try:
+        # Connect to the SQLite database
+        db_path = '/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/Main_data.db'
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
 
-        except sqlite3.Error as e:
-            print(f"Error deleting data: {e}")
-        finally:
-            # Close the database connection
-            conn.close()
-    else:
-        print("No row selected to delete.")
+        # Execute the DELETE query
+        cursor.execute("DELETE FROM Main_data WHERE plant_ID = ?", (plant_id,))
+        conn.commit()
+
+        # Check if rows were deleted
+        if cursor.rowcount > 0:
+            QMessageBox.information(None, "Success", f"ลบข้อมูลที่มี case_id: {plant_id} สำเร็จแล้ว!")
+            print(f"Successfully deleted record with case_id: {plant_id}")
+        else:
+            QMessageBox.warning(None, "Not Found", f"ไม่พบข้อมูลที่มี case_id: {plant_id}")
+            print(f"No record found with case_id: {plant_id}")
+
+        # Reload the table data
+        load_data_into_table(ui.tableView)
+
+    except sqlite3.Error as e:
+        print(f"Error deleting data: {e}")
+        QMessageBox.critical(None, "Database Error", f"เกิดข้อผิดพลาดในการลบข้อมูล:\n{e}")
+    finally:
+        # Close the database connection
+        conn.close()
+
 
 def seach(table_view):
     seach_id = str(ui.textEdit.document().toPlainText())
