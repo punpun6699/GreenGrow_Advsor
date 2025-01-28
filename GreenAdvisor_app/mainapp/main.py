@@ -67,7 +67,7 @@ if __name__ == '__main__':
     ui.setupUi(win)  # Set up the UI elements in the main window
     win.show()  # Show the main window
 
-    # Connect button clicks to functions
+    # Connect button clicks to functions{
     ui.pushButton_cal.clicked.connect(getdata)
     ui.pushButton_cls.clicked.connect(cls)
     ui.pushButton_data.clicked.connect(opendata)
