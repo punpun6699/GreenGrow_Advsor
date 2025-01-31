@@ -1,63 +1,77 @@
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore, QtWidgets,QtGui
+
 
 
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("GreenGrow Advisor")
         Form.resize(520, 600)
-        Form.setStyleSheet("background-color: #e8f5e9;")  # เขียวอ่อน
 
+        #Form.setStyleSheet("background-color: #e8f5e9;")  # เขียวอ่อน
+        Form.setObjectName("GreenGrow Advisor")
+        Form.resize(520, 600)
+
+        # ตั้งค่าพื้นหลังให้ขยายตามขนาดของหน้าต่าง
+        Form.setStyleSheet("""
+                    QWidget {
+                        background-image: url('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_UI/image/Green Saver.png');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+                """)
         # สร้างฟอนต์
         font_label = "font-size: 14px; font-weight: bold; color: #2e7d32;"
         font_input = "background-color: white; border: 1px solid #388e3c; border-radius: 5px; color: #2e7d32;"
         font_button = "background-color: #66bb6a; color: black; font-weight: bold; border-radius: 10px; padding: 10px; font-size: 14px;"
         font_button_hover = "QPushButton:hover {background-color: #388e3c;}"
 
+
         # สร้าง label และ textedit แบบไม่ใช้ for
         self.label_UV_index = QtWidgets.QLabel(Form)
         self.label_UV_index.setGeometry(QtCore.QRect(40, 40, 140, 30))
         self.label_UV_index.setText("UV Index:")
-        self.label_UV_index.setStyleSheet(font_label)
+      #  self.label_UV_index.setStyleSheet(font_label)
 
         self.textEdit_UV_index = QtWidgets.QTextEdit(Form)
         self.textEdit_UV_index.setGeometry(QtCore.QRect(190, 40, 150, 30))
-        self.textEdit_UV_index.setStyleSheet(font_input)
+       # self.textEdit_UV_index.setStyleSheet(font_input)
 
         self.label_Temperature = QtWidgets.QLabel(Form)
         self.label_Temperature.setGeometry(QtCore.QRect(40, 80, 140, 30))
         self.label_Temperature.setText("Temperature:")
-        self.label_Temperature.setStyleSheet(font_label)
+      #  self.label_Temperature.setStyleSheet(font_label)
 
         self.textEdit_Temperature = QtWidgets.QTextEdit(Form)
         self.textEdit_Temperature.setGeometry(QtCore.QRect(190, 80, 150, 30))
-        self.textEdit_Temperature.setStyleSheet(font_input)
+       # self.textEdit_Temperature.setStyleSheet(font_input)
 
         self.label_Humidity = QtWidgets.QLabel(Form)
         self.label_Humidity.setGeometry(QtCore.QRect(40, 120, 140, 30))
         self.label_Humidity.setText("Humidity:")
-        self.label_Humidity.setStyleSheet(font_label)
+      #  self.label_Humidity.setStyleSheet(font_label)
 
         self.textEdit_Humidity = QtWidgets.QTextEdit(Form)
         self.textEdit_Humidity.setGeometry(QtCore.QRect(190, 120, 150, 30))
-        self.textEdit_Humidity.setStyleSheet(font_input)
+       # self.textEdit_Humidity.setStyleSheet(font_input)
 
         self.label_Precipitation_Q1 = QtWidgets.QLabel(Form)
         self.label_Precipitation_Q1.setGeometry(QtCore.QRect(40, 160, 140, 30))
         self.label_Precipitation_Q1.setText("Precipitation Q1:")
-        self.label_Precipitation_Q1.setStyleSheet(font_label)
+      #  self.label_Precipitation_Q1.setStyleSheet(font_label)
 
         self.textEdit_Precipitation_Q1 = QtWidgets.QTextEdit(Form)
         self.textEdit_Precipitation_Q1.setGeometry(QtCore.QRect(190, 160, 150, 30))
-        self.textEdit_Precipitation_Q1.setStyleSheet(font_input)
+      #  self.textEdit_Precipitation_Q1.setStyleSheet(font_input)
 
         self.label_Precipitation_Q2 = QtWidgets.QLabel(Form)
         self.label_Precipitation_Q2.setGeometry(QtCore.QRect(40, 200, 140, 30))
         self.label_Precipitation_Q2.setText("Precipitation Q2:")
-        self.label_Precipitation_Q2.setStyleSheet(font_label)
+      #  self.label_Precipitation_Q2.setStyleSheet(font_label)
 
         self.textEdit_Precipitation_Q2 = QtWidgets.QTextEdit(Form)
         self.textEdit_Precipitation_Q2.setGeometry(QtCore.QRect(190, 200, 150, 30))
-        self.textEdit_Precipitation_Q2.setStyleSheet(font_input)
+       # self.textEdit_Precipitation_Q2.setStyleSheet(font_input)
 
         self.label_Precipitation_Q3 = QtWidgets.QLabel(Form)
         self.label_Precipitation_Q3.setGeometry(QtCore.QRect(40, 240, 140, 30))
@@ -142,6 +156,14 @@ if __name__ == "__main__":
     import sys
 
     app = QtWidgets.QApplication(sys.argv)
+    # ตั้งให้แอปไม่ใช้ Dark Mode โดยการตั้ง Palette
+    app.setStyle("Fusion")
+    palette = app.palette()
+    palette.setColor(QtGui.QPalette.Window, QtGui.QColor(255, 255, 255))  # ขาว
+    palette.setColor(QtGui.QPalette.WindowText, QtGui.QColor(0, 0, 0))  # ดำ
+    app.setPalette(palette)
+
+
     Form = QtWidgets.QWidget()
     ui = Ui_Form()
     ui.setupUi(Form)

@@ -2,6 +2,7 @@ import sys, subprocess, sqlite3
 from PyQt5.QtWidgets import QApplication, QMainWindow , QMessageBox
 from GreenAdvisor_UI import data_ui
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
+from PyQt5 import QtGui
 
 def load_data_into_table(table_view):
     # Connect to the SQLite database
@@ -156,6 +157,7 @@ def seach(table_view):
         # Set the model for the QTableView
         table_view.setModel(model)
 
+
         if not rows:
             print(f"No data found for Plant_id: {seach_id}")
 
@@ -178,6 +180,12 @@ if __name__ == '__main__':
     # Load data into the QTableView after setting up the UI
     load_data_into_table(ui.tableView)  # Use 'tableView' from your UI file
     win.show()  # Show the main window
+
+    app.setStyle("Fusion")
+    palette = app.palette()
+    palette.setColor(QtGui.QPalette.Window, QtGui.QColor(255, 255, 255))  # ขาว
+    palette.setColor(QtGui.QPalette.WindowText, QtGui.QColor(0, 0, 0))  # ดำ
+    app.setPalette(palette)
 
     # Connect buttons to their respective actions
     ui.data_Button.clicked.connect(openPlantdata)
