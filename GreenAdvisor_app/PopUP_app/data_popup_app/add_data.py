@@ -1,6 +1,7 @@
 import sys,sqlite3
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from GreenAdvisor_UI import add_data_ui
+from PyQt5 import QtCore
 def exit_with_code():
     app.exit(0)  # Exit with status code 0
 def calldata():
@@ -88,6 +89,15 @@ if __name__ == '__main__':
     win = QMainWindow()  # Create the main window
     ui = add_data_ui.Ui_Form()  # Initialize the UI from .ui file
     ui.setupUi(win)  # Set up the UI elements in the main window
+
+    win.setWindowFlags(QtCore.Qt.WindowType.Window |
+                       QtCore.Qt.WindowType.CustomizeWindowHint |
+                       QtCore.Qt.WindowType.WindowCloseButtonHint |
+                       QtCore.Qt.WindowType.WindowMinimizeButtonHint)
+
+    # ตั้งค่าให้ขนาดคงที่ (ห้ามขยาย)
+    win.setFixedSize(win.size())
+
     calldata()
     # Load data into the QTableView after setting up the UI
     win.show()  # Show the main window

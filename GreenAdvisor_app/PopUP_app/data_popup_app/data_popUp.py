@@ -2,7 +2,7 @@ import sys, subprocess, sqlite3
 from PyQt5.QtWidgets import QApplication, QMainWindow , QMessageBox
 from GreenAdvisor_UI import data_ui
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
-from PyQt5 import QtGui
+from PyQt5 import QtGui,QtCore
 
 def load_data_into_table(table_view):
     # Connect to the SQLite database
@@ -176,6 +176,11 @@ if __name__ == '__main__':
     win = QMainWindow()  # Create the main window
     ui = data_ui.Ui_Form()  # Initialize the UI from .ui file
     ui.setupUi(win)  # Set up the UI elements in the main window
+
+    win.setWindowFlags(QtCore.Qt.WindowType.Window |
+                       QtCore.Qt.WindowType.CustomizeWindowHint |
+                       QtCore.Qt.WindowType.WindowCloseButtonHint |
+                       QtCore.Qt.WindowType.WindowMinimizeButtonHint)
 
     # Load data into the QTableView after setting up the UI
     load_data_into_table(ui.tableView)  # Use 'tableView' from your UI file

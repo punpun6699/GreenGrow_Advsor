@@ -1,6 +1,6 @@
 import sys,subprocess,joblib
 from PyQt5.QtWidgets import QApplication , QMainWindow
-from PyQt5 import QtGui
+from PyQt5 import QtGui,QtCore
 from GreenAdvisor_UI import main_ui
 
 
@@ -62,21 +62,33 @@ def opendata():
         print(f"Error running opendata(): \n{e}")
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)  # Create the main application object
-    win = QMainWindow()  # Create the main window
-    ui = main_ui.Ui_Form()  # Initialize the UI from .ui file
-    ui.setupUi(win)  # Set up the UI elements in the main window
-    win.show()  # Show the main window
+    app = QApplication(sys.argv)  # สร้าง QApplication
+    win = QMainWindow()  # สร้างหน้าต่างหลัก
 
+    ui = main_ui.Ui_Form()  # โหลด UI จากไฟล์ .ui
+    ui.setupUi(win)  # ตั้งค่า UI
+
+    # ตั้งค่า WindowFlags เพื่อเอาปุ่มขยายออก
+    win.setWindowFlags(QtCore.Qt.WindowType.Window |
+                       QtCore.Qt.WindowType.CustomizeWindowHint |
+                       QtCore.Qt.WindowType.WindowCloseButtonHint |
+                       QtCore.Qt.WindowType.WindowMinimizeButtonHint)
+
+    # ตั้งค่าให้ขนาดคงที่ (ห้ามขยาย)
+    win.setFixedSize(win.size())
+
+    # ตั้งค่า Theme
     app.setStyle("Fusion")
     palette = app.palette()
     palette.setColor(QtGui.QPalette.Window, QtGui.QColor(255, 255, 255))  # ขาว
     palette.setColor(QtGui.QPalette.WindowText, QtGui.QColor(0, 0, 0))  # ดำ
     app.setPalette(palette)
 
-    # Connect button clicks to functions
+    # เชื่อมปุ่มกับฟังก์ชัน
     ui.pushButton_cal.clicked.connect(getdata)
     ui.pushButton_cls.clicked.connect(cls)
     ui.pushButton_data.clicked.connect(opendata)
 
+    win.show()  # แสดงหน้าต่างหลังตั้งค่าเสร็จ
+    sys.exit(app.exec_())  # รันแอปพลิเคชัน
     sys.exit(app.exec_())  # Start the event loop and exit the application when done

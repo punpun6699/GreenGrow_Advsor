@@ -14,14 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         # สร้างฟอนต์
-        font_label = "font-size: 14px; font-weight: bold; color: #2e7d32;"
-        font_input = "background-color: white; border: 1px solid #388e3c; border-radius: 5px; color: #2e7d32;"
-        font_button = "background-color: #66bb6a; color: black; font-weight: bold; border-radius: 10px; padding: 10px; font-size: 14px;"
-        font_button_hover = "QPushButton:hover {background-color: #388e3c;}"
-        font_table_header = "font-size: 14px; font-weight: bold; color: black; background-color: lightgray;"
-        font_table_data = "font-size: 14px; color: black;"
 
-        Form.setStyleSheet("background-color: #e8f5e9;")  # เขียวอ่อน
+
+       # Form.setStyleSheet("background-color: #e8f5e9;")  # เขียวอ่อน
 
         Form.setObjectName("Data")
         Form.resize(561, 438)
@@ -36,11 +31,7 @@ class Ui_Form(object):
         self.model.setHorizontalHeaderLabels(["plant_ID", "Name", "Type","age"])
         self.table_view = QtWidgets.QTableView()
         self.table_view.setModel(self.model)
-        self.table_view.setStyleSheet(font_button)
-        self.table_view.setStyleSheet(f"""
-            QHeaderView::section {{{font_table_header}}}
-            QTableView {{{font_table_data}}}
-        """)
+
 
         self.tableView.setModel(self.model)
 
@@ -76,7 +67,7 @@ class Ui_Form(object):
         self.textEdit = QtWidgets.QTextEdit(Form);self.textEdit.setGeometry(QtCore.QRect(90, 70, 321, 31));self.textEdit.setObjectName("textEdit")
         #label
         self.label_2 = QtWidgets.QLabel(Form);self.label_2.setGeometry(QtCore.QRect(250, 20, 161, 41));self.label_2.setObjectName("label_2")
-        self.label_2.setStyleSheet(font_label)
+
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)

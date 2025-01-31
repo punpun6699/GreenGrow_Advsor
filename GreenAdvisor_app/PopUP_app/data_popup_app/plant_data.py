@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow,QMessageBox
 from GreenAdvisor_UI import plant_data_ui
 import sqlite3  # For SQLite connection
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
+from PyQt5 import QtCore
 
 def edit_data():
     conn = sqlite3.connect('/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/Main_data.db')  # Database path
@@ -217,6 +218,11 @@ if __name__ == '__main__':
     win = QMainWindow()  # Create the main window
     ui = plant_data_ui.Ui_Form()  # Initialize the UI from .ui file
     ui.setupUi(win)  # Set up the UI elements in the main window
+
+    win.setWindowFlags(QtCore.Qt.WindowType.Window |
+                       QtCore.Qt.WindowType.CustomizeWindowHint |
+                       QtCore.Qt.WindowType.WindowCloseButtonHint |
+                       QtCore.Qt.WindowType.WindowMinimizeButtonHint)
     main()
     # Load data into the QTableView after setting up the UI
    # load_data_into_table(ui.tableView)  # Use 'tableView' from your UI file
