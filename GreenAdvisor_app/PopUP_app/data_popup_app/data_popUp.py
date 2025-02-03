@@ -186,11 +186,11 @@ if __name__ == '__main__':
     load_data_into_table(ui.tableView)  # Use 'tableView' from your UI file
     win.show()  # Show the main window
 
-    app.setStyle("Fusion")
-    palette = app.palette()
-    palette.setColor(QtGui.QPalette.Window, QtGui.QColor(255, 255, 255))  # ขาว
-    palette.setColor(QtGui.QPalette.WindowText, QtGui.QColor(0, 0, 0))  # ดำ
-    app.setPalette(palette)
+    # app.setStyle("Fusion")
+    # palette = app.palette()
+    # palette.setColor(QtGui.QPalette.Window, QtGui.QColor(255, 255, 255))  # ขาว
+    # # palette.setColor(QtGui.QPalette.WindowText, QtGui.QColor(0, 0, 0))  # ดำ
+    # app.setPalette(palette)
 
     # Connect buttons to their respective actions
     ui.data_Button.clicked.connect(openPlantdata)

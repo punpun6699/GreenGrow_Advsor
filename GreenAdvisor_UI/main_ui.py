@@ -14,14 +14,14 @@ class Ui_Form(object):
         # ตั้งค่าพื้นหลังให้ขยายตามขนาดของหน้าต่าง
         Form.setStyleSheet("""
                     QWidget {
-                        background-image: url('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_UI/image/Green Saver.png');
+                        background-image: url('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_UI/image/Green Saver.jpg');
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: cover;
                     }
                 """)
         # สร้างฟอนต์
-        font_label = "font-size: 14px; font-weight: bold; color: #2e7d32;"
+        font_textEdittextEdit = "background: transparent; border: none; color: #2e7d32;"
         font_input = "background-color: white; border: 1px solid #388e3c; border-radius: 5px; color: #2e7d32;"
         font_button = """
     QPushButton {
@@ -43,7 +43,7 @@ class Ui_Form(object):
 
         self.textEdit_UV_index = QtWidgets.QTextEdit(Form)
         self.textEdit_UV_index.setGeometry(QtCore.QRect(190, 40, 150, 30))
-        self.textEdit_UV_index.setStyleSheet("background: transparent; border: none; color: #2e7d32;")
+        self.textEdit_UV_index.setStyleSheet(font_textEdittextEdit)
 
        # self.textEdit_UV_index.setStyleSheet(font_input)
 
@@ -54,7 +54,7 @@ class Ui_Form(object):
 
         self.textEdit_Temperature = QtWidgets.QTextEdit(Form)
         self.textEdit_Temperature.setGeometry(QtCore.QRect(190, 80, 150, 30))
-        self.textEdit_Temperature.setStyleSheet("background: transparent; border: none; color: #2e7d32;")
+        self.textEdit_Temperature.setStyleSheet(font_textEdittextEdit)
 
        # self.textEdit_Temperature.setStyleSheet(font_input)
 
@@ -65,7 +65,7 @@ class Ui_Form(object):
 
         self.textEdit_Humidity = QtWidgets.QTextEdit(Form)
         self.textEdit_Humidity.setGeometry(QtCore.QRect(190, 120, 150, 30))
-        self.textEdit_Humidity.setStyleSheet("background: transparent; border: none; color: #2e7d32;")
+        self.textEdit_Humidity.setStyleSheet(font_textEdittextEdit)
 
        # self.textEdit_Humidity.setStyleSheet(font_input)
 
@@ -76,7 +76,7 @@ class Ui_Form(object):
 
         self.textEdit_Precipitation_Q1 = QtWidgets.QTextEdit(Form)
         self.textEdit_Precipitation_Q1.setGeometry(QtCore.QRect(190, 160, 150, 30))
-        self.textEdit_Precipitation_Q1.setStyleSheet("background: transparent; border: none; color: #2e7d32;")
+        self.textEdit_Precipitation_Q1.setStyleSheet(font_textEdittextEdit)
 
       #  self.textEdit_Precipitation_Q1.setStyleSheet(font_input)
 
@@ -87,7 +87,7 @@ class Ui_Form(object):
 
         self.textEdit_Precipitation_Q2 = QtWidgets.QTextEdit(Form)
         self.textEdit_Precipitation_Q2.setGeometry(QtCore.QRect(190, 200, 150, 30))
-        self.textEdit_Precipitation_Q2.setStyleSheet("background: transparent; border: none; color: #2e7d32;")
+        self.textEdit_Precipitation_Q2.setStyleSheet(font_textEdittextEdit)
 
        # self.textEdit_Precipitation_Q2.setStyleSheet(font_input)
 
@@ -98,7 +98,7 @@ class Ui_Form(object):
 
         self.textEdit_Precipitation_Q3 = QtWidgets.QTextEdit(Form)
         self.textEdit_Precipitation_Q3.setGeometry(QtCore.QRect(190, 240, 150, 30))
-        self.textEdit_Precipitation_Q3.setStyleSheet("background: transparent; border: none; color: #2e7d32;")
+        self.textEdit_Precipitation_Q3.setStyleSheet(font_textEdittextEdit)
 
         #self.textEdit_Precipitation_Q3.setStyleSheet(font_input)
 
@@ -109,7 +109,7 @@ class Ui_Form(object):
 
         self.textEdit_Precipitation_Q4 = QtWidgets.QTextEdit(Form)
         self.textEdit_Precipitation_Q4.setGeometry(QtCore.QRect(190, 280, 150, 30))
-        self.textEdit_Precipitation_Q4.setStyleSheet("background: transparent; border: none; color: #2e7d32;")
+        self.textEdit_Precipitation_Q4.setStyleSheet(font_textEdittextEdit)
 
         #self.textEdit_Precipitation_Q4.setStyleSheet(font_input)
 
@@ -120,7 +120,7 @@ class Ui_Form(object):
 
         self.textEdit_Nitrogen = QtWidgets.QTextEdit(Form)
         self.textEdit_Nitrogen.setGeometry(QtCore.QRect(190, 320, 150, 30))
-        self.textEdit_Nitrogen.setStyleSheet("background: transparent; border: none; color: #2e7d32;")
+        self.textEdit_Nitrogen.setStyleSheet(font_textEdittextEdit)
 
       #  self.textEdit_Nitrogen.setStyleSheet(font_input)
 
@@ -131,13 +131,13 @@ class Ui_Form(object):
 
         self.textEdit_Phosphorus = QtWidgets.QTextEdit(Form)
         self.textEdit_Phosphorus.setGeometry(QtCore.QRect(190, 360, 150, 30))
-        self.textEdit_Phosphorus.setStyleSheet("background: transparent; border: none; color: #2e7d32;")
+        self.textEdit_Phosphorus.setStyleSheet(font_textEdittextEdit)
 
       #   self.label_Potassium.setStyleSheet(font_label)
 
         self.textEdit_Potassium = QtWidgets.QTextEdit(Form)
         self.textEdit_Potassium.setGeometry(QtCore.QRect(190, 400, 150, 30))
-        self.textEdit_Potassium.setStyleSheet("background: transparent; border: none; color: #2e7d32;")
+        self.textEdit_Potassium.setStyleSheet(font_textEdittextEdit)
 
       #  self.textEdit_Potassium.setStyleSheet(font_input)
 
@@ -150,7 +150,7 @@ class Ui_Form(object):
         self.textEdit_ANS = QtWidgets.QTextEdit(Form)
         self.textEdit_ANS.setGeometry(QtCore.QRect(190, 440, 150, 30))
         self.textEdit_ANS.setReadOnly(True)
-        self.textEdit_ANS.setStyleSheet("background: transparent; border: none; color: #2e7d32;")
+        self.textEdit_ANS.setStyleSheet(font_textEdittextEdit)
 
       #  self.textEdit_ANS.setStyleSheet(font_input)
 
