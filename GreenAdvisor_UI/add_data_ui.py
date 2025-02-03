@@ -17,7 +17,7 @@ class Ui_Form(object):
         Form.resize(573, 289)
         Form.setStyleSheet("""
                             QWidget {
-                                background-image: url('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_UI/image/1.png');
+                                background-image: url('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_UI/image/add_data.png');
                                 background-position: center;
                                 background-repeat: no-repeat;
                                 background-size: cover;
@@ -55,11 +55,11 @@ class Ui_Form(object):
         self.Log.setStyleSheet(font_textEdittextEdit)
 
         #pushButton
-        self.Add_pushButton = QtWidgets.QPushButton(Form);self.Add_pushButton.setGeometry(QtCore.QRect(100, 200, 101, 61));self.Add_pushButton.setObjectName("pushButton")
+        self.Add_pushButton = QtWidgets.QPushButton(Form);self.Add_pushButton.setGeometry(QtCore.QRect(102, 200, 105, 60));self.Add_pushButton.setObjectName("pushButton")
         self.Add_pushButton.setStyleSheet(font_button)
-        self.Cls_pushButton = QtWidgets.QPushButton(Form);self.Cls_pushButton.setGeometry(QtCore.QRect(235, 200, 101, 61));self.Cls_pushButton.setObjectName("pushButton_2")
+        self.Cls_pushButton = QtWidgets.QPushButton(Form);self.Cls_pushButton.setGeometry(QtCore.QRect(237, 200, 105, 60));self.Cls_pushButton.setObjectName("pushButton_2")
         self.Cls_pushButton.setStyleSheet(font_button)
-        self.pushButton_3 = QtWidgets.QPushButton(Form);self.pushButton_3.setGeometry(QtCore.QRect(370, 200, 101, 61));self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_3 = QtWidgets.QPushButton(Form);self.pushButton_3.setGeometry(QtCore.QRect(370, 200, 105, 60));self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_3.setStyleSheet(font_button)
 
 
