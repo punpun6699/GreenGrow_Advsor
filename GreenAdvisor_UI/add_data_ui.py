@@ -15,55 +15,53 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Add Data")
         Form.resize(573, 289)
-        #label
-        self.label = QtWidgets.QLabel(Form);self.label.setGeometry(QtCore.QRect(20, 30, 71, 31));self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(Form);self.label_2.setGeometry(QtCore.QRect(320, 30, 71, 31));self.label_2.setObjectName("label_2")
-        self.label_3 = QtWidgets.QLabel(Form);self.label_3.setGeometry(QtCore.QRect(20, 80, 71, 31));self.label_3.setObjectName("label_3")
-        self.label_4 = QtWidgets.QLabel(Form);self.label_4.setGeometry(QtCore.QRect(320, 80, 71, 31));self.label_4.setObjectName("label_4")
-        self.label_5 = QtWidgets.QLabel(Form);self.label_5.setGeometry(QtCore.QRect(30, 140, 71, 31));self.label_5.setObjectName("label_5")
-        #textEdit
-        self.Plant_ID_textEdit = QtWidgets.QTextEdit(Form);self.Plant_ID_textEdit.setGeometry(QtCore.QRect(100, 30, 161, 31));self.Plant_ID_textEdit.setObjectName("Plant_ID_textEdit");self.Plant_ID_textEdit.setReadOnly(True)
-        self.Type_textEdit = QtWidgets.QTextEdit(Form);self.Type_textEdit.setGeometry(QtCore.QRect(100, 80, 161, 31));self.Type_textEdit.setObjectName("Type_textEdit")
-        self.Name_textEdit = QtWidgets.QTextEdit(Form);self.Name_textEdit.setGeometry(QtCore.QRect(380, 30, 161, 31));self.Name_textEdit.setObjectName("Name_textEdit")
-        self.Age_textEdit = QtWidgets.QTextEdit(Form);self.Age_textEdit.setGeometry(QtCore.QRect(380, 80, 161, 31));self.Age_textEdit.setObjectName("Age_textEdit")
-        self.Log = QtWidgets.QTextEdit(Form);self.Log.setGeometry(QtCore.QRect(120, 140, 391, 31));self.Log.setObjectName("Log");self.Log.setReadOnly(True)
-        #pushButton
-        self.Add_pushButton = QtWidgets.QPushButton(Form);self.Add_pushButton.setGeometry(QtCore.QRect(100, 200, 101, 61));self.Add_pushButton.setObjectName("pushButton")
-        self.Add_pushButton.setStyleSheet("""
-                            QPushButton {
-                                background-color: blue; 
-                                color: white;          /* White text */
-                                border: none;
-                                font-weight: bold;
-                            }
-                            QPushButton:hover {
-                                background-color: darkblue;
+        Form.setStyleSheet("""
+                            QWidget {
+                                background-image: url('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_UI/image/1.png');
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
                             }
                         """)
+        font_textEdittextEdit = "background: transparent; border: none; color: #2e7d32;"
+
+        font_button = """
+            QPushButton {
+                background: transparent;
+                border: none;
+            }
+           QPushButton:hover {
+        background-color: rgba(255, 255, 255, 50); /* สีขาวโปร่งแสง */
+    }
+        """
+
+
+        #label
+       # self.label = QtWidgets.QLabel(Form);self.label.setGeometry(QtCore.QRect(20, 30, 71, 31));self.label.setObjectName("label")
+        #self.label_2 = QtWidgets.QLabel(Form);self.label_2.setGeometry(QtCore.QRect(320, 30, 71, 31));self.label_2.setObjectName("label_2")
+       # self.label_3 = QtWidgets.QLabel(Form);self.label_3.setGeometry(QtCore.QRect(20, 80, 71, 31));self.label_3.setObjectName("label_3")
+        #self.label_4 = QtWidgets.QLabel(Form);self.label_4.setGeometry(QtCore.QRect(320, 80, 71, 31));self.label_4.setObjectName("label_4")
+        #self.label_5 = QtWidgets.QLabel(Form);self.label_5.setGeometry(QtCore.QRect(30, 140, 71, 31));self.label_5.setObjectName("label_5")
+        #textEdit
+        self.Plant_ID_textEdit = QtWidgets.QTextEdit(Form);self.Plant_ID_textEdit.setGeometry(QtCore.QRect(100, 30, 161, 31));self.Plant_ID_textEdit.setObjectName("Plant_ID_textEdit");self.Plant_ID_textEdit.setReadOnly(True)
+        self.Plant_ID_textEdit.setStyleSheet(font_textEdittextEdit)
+        self.Type_textEdit = QtWidgets.QTextEdit(Form);self.Type_textEdit.setGeometry(QtCore.QRect(100, 80, 161, 31));self.Type_textEdit.setObjectName("Type_textEdit")
+        self.Type_textEdit.setStyleSheet(font_textEdittextEdit)
+        self.Name_textEdit = QtWidgets.QTextEdit(Form);self.Name_textEdit.setGeometry(QtCore.QRect(380, 30, 161, 31));self.Name_textEdit.setObjectName("Name_textEdit")
+        self.Name_textEdit.setStyleSheet(font_textEdittextEdit)
+        self.Age_textEdit = QtWidgets.QTextEdit(Form);self.Age_textEdit.setGeometry(QtCore.QRect(380, 80, 161, 31));self.Age_textEdit.setObjectName("Age_textEdit")
+        self.Age_textEdit.setStyleSheet(font_textEdittextEdit)
+        self.Log = QtWidgets.QTextEdit(Form);self.Log.setGeometry(QtCore.QRect(120, 140, 391, 31));self.Log.setObjectName("Log");self.Log.setReadOnly(True)
+        self.Log.setStyleSheet(font_textEdittextEdit)
+
+        #pushButton
+        self.Add_pushButton = QtWidgets.QPushButton(Form);self.Add_pushButton.setGeometry(QtCore.QRect(100, 200, 101, 61));self.Add_pushButton.setObjectName("pushButton")
+        self.Add_pushButton.setStyleSheet(font_button)
         self.Cls_pushButton = QtWidgets.QPushButton(Form);self.Cls_pushButton.setGeometry(QtCore.QRect(235, 200, 101, 61));self.Cls_pushButton.setObjectName("pushButton_2")
-        self.Cls_pushButton.setStyleSheet("""
-                                    QPushButton {
-                                        background-color: green; 
-                                        color: white;          /* White text */
-                                        border: none;
-                                        font-weight: bold;
-                                    }
-                                    QPushButton:hover {
-                                        background-color: darkgreen;
-                                    }
-                                """)
+        self.Cls_pushButton.setStyleSheet(font_button)
         self.pushButton_3 = QtWidgets.QPushButton(Form);self.pushButton_3.setGeometry(QtCore.QRect(370, 200, 101, 61));self.pushButton_3.setObjectName("pushButton_3")
-        self.pushButton_3.setStyleSheet("""
-                   QPushButton {
-                       background-color: red; /* Red background */
-                       color: white;          /* White text */
-                       border: none;
-                       font-weight: bold;
-                   }
-                   QPushButton:hover {
-                       background-color: darkred; /* Dark red on hover */
-                   }
-               """)
+        self.pushButton_3.setStyleSheet(font_button)
+
 
 
         self.retranslateUi(Form)
@@ -72,14 +70,14 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Add Data"))
-        self.label.setText(_translate("Form", "plant_ID"))
-        self.label_2.setText(_translate("Form", "Name"))
-        self.label_3.setText(_translate("Form", "Type"))
-        self.label_4.setText(_translate("Form", "Age"))
-        self.Add_pushButton.setText(_translate("Form", "Add"))
-        self.Cls_pushButton.setText(_translate("Form", "Clear"))
-        self.pushButton_3.setText(_translate("Form", "Close"))
-        self.label_5.setText(_translate("Form", "log"))
+        # self.label.setText(_translate("Form", "plant_ID"))
+        # self.label_2.setText(_translate("Form", "Name"))
+        # self.label_3.setText(_translate("Form", "Type"))
+        # self.label_4.setText(_translate("Form", "Age"))
+        self.Add_pushButton.setText(_translate("Form", ""))
+        self.Cls_pushButton.setText(_translate("Form", ""))
+        self.pushButton_3.setText(_translate("Form", ""))
+        # self.label_5.setText(_translate("Form", "log"))
 
 
 if __name__ == "__main__":

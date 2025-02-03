@@ -89,6 +89,7 @@ if __name__ == '__main__':
     ui.pushButton_cls.clicked.connect(cls)
     ui.pushButton_data.clicked.connect(opendata)
 
+
     win.show()  # แสดงหน้าต่างหลังตั้งค่าเสร็จ
     sys.exit(app.exec_())  # รันแอปพลิเคชัน
     sys.exit(app.exec_())  # Start the event loop and exit the application when done
