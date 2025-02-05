@@ -14,78 +14,115 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Plant Data")
         Form.resize(573, 465)
+        Form.setStyleSheet("""
+                                                   QWidget {
+                                                       background-image: url('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_UI/image/type.png');
+                                                       background-position: center;
+                                                       background-repeat: no-repeat;
+                                                       background-size: cover;
+                                                   }
+                                               """)
+        font_textEdittextEdit = "background: transparent; border: none; color: #2e7d32;"
+        font_button = """
+                                   QPushButton {
+                                       background: transparent;
+                                       border: none;
+                                   }
+                                  QPushButton:hover {
+                               background-color: rgba(255, 255, 255, 50); /* สีขาวโปร่งแสง */
+                           }
+                               """
 
         # Creating the table view
         self.tableView = QtWidgets.QTableView(Form)
-        self.tableView.setGeometry(QtCore.QRect(20, 160, 521, 231))
+        self.tableView.setGeometry(QtCore.QRect(20, 165, 521, 211))
         self.tableView.setObjectName("tableView")
 
-        # Buttons
+        self.tableView.setStyleSheet("""
+            QHeaderView::section {
+                background-color: #a5d6a7;  /* สีเขียวอ่อน */
+                color: black;  /* สีตัวอักษร */
+                font-weight: bold;
+                border: 1px solid #2e7d32; /* ขอบสีเขียวเข้ม */
+            }
+            QTableView {
+                color: #2e7d32; /* เปลี่ยนสีข้อความในตาราง */
+            }
+        """)
+        # สร้าง model
+        self.model = QtGui.QStandardItemModel()
+
+
         self.Edit_data_Button = QtWidgets.QPushButton(Form)
         self.Edit_data_Button.setGeometry(QtCore.QRect(30, 400, 111, 51))
         self.Edit_data_Button.setObjectName("pushButton")
+        self.Edit_data_Button.setStyleSheet(font_button)
 
         self.Add_case_data_Button = QtWidgets.QPushButton(Form)
         self.Add_case_data_Button.setGeometry(QtCore.QRect(160, 400, 111, 51))
         self.Add_case_data_Button.setObjectName("Add_case_data_Button")
+        self.Add_case_data_Button.setStyleSheet(font_button)
+
 
         self.reload_Button = QtWidgets.QPushButton(Form)
         self.reload_Button.setGeometry(QtCore.QRect(290, 400, 111, 51))
         self.reload_Button.setObjectName("reload_Button")
+        self.reload_Button.setStyleSheet(font_button)
+
 
         self.Dell_Button = QtWidgets.QPushButton(Form)
         self.Dell_Button.setGeometry(QtCore.QRect(420, 400, 111, 51))
         self.Dell_Button.setObjectName("Dell_Button")
-        self.Dell_Button.setStyleSheet("""
-                    QPushButton {
-                        background-color: red; /* Red background */
-                        color: white;          /* White text */
-                        border: none;
-                        font-weight: bold;
-                    }
-                    QPushButton:hover {
-                        background-color: darkred; /* Dark red on hover */
-                    }
-                """)
+        self.Dell_Button.setStyleSheet(font_button)
+
 
         # Labels
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(20, 30, 71, 31))
-        self.label.setObjectName("label")
-
-        self.label_2 = QtWidgets.QLabel(Form)
-        self.label_2.setGeometry(QtCore.QRect(320, 30, 71, 31))
-        self.label_2.setObjectName("label_2")
-
-        self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setGeometry(QtCore.QRect(20, 80, 71, 31))
-        self.label_3.setObjectName("label_3")
-
-        self.label_4 = QtWidgets.QLabel(Form)
-        self.label_4.setGeometry(QtCore.QRect(320, 80, 71, 31))
-        self.label_4.setObjectName("label_4")
+        # self.label = QtWidgets.QLabel(Form)
+        # self.label.setGeometry(QtCore.QRect(20, 30, 71, 31))
+        # self.label.setObjectName("label")
+        #
+        # self.label_2 = QtWidgets.QLabel(Form)
+        # self.label_2.setGeometry(QtCore.QRect(320, 30, 71, 31))
+        # self.label_2.setObjectName("label_2")
+        #
+        # self.label_3 = QtWidgets.QLabel(Form)
+        # self.label_3.setGeometry(QtCore.QRect(20, 80, 71, 31))
+        # self.label_3.setObjectName("label_3")
+        #
+        # self.label_4 = QtWidgets.QLabel(Form)
+        # self.label_4.setGeometry(QtCore.QRect(320, 80, 71, 31))
+        # self.label_4.setObjectName("label_4")
 
         # TextEdit Fields
         self.plant_ID_textEdit = QtWidgets.QTextEdit(Form)
         self.plant_ID_textEdit.setGeometry(QtCore.QRect(100, 30, 161, 31))
         self.plant_ID_textEdit.setObjectName("textEdit")
         self.plant_ID_textEdit.setReadOnly(True)
+        self.plant_ID_textEdit.setStyleSheet(font_textEdittextEdit)
+
 
         self.Name_textEdit = QtWidgets.QTextEdit(Form)
         self.Name_textEdit.setGeometry(QtCore.QRect(100, 80, 161, 31))
         self.Name_textEdit.setObjectName("Name_textEdit")
+        self.Name_textEdit.setStyleSheet(font_textEdittextEdit)
+
 
         self.Type_textEdit = QtWidgets.QTextEdit(Form)
         self.Type_textEdit.setGeometry(QtCore.QRect(380, 30, 161, 31))
         self.Type_textEdit.setObjectName("textEdit_3")
+        self.Type_textEdit.setStyleSheet(font_textEdittextEdit)
+
 
         self.Age_textEdit = QtWidgets.QTextEdit(Form)
         self.Age_textEdit.setGeometry(QtCore.QRect(380, 80, 161, 31))
         self.Age_textEdit.setObjectName("textEdit_4")
+        self.Age_textEdit.setStyleSheet(font_textEdittextEdit)
+
 
         self.log_textEdit = QtWidgets.QTextEdit(Form)
         self.log_textEdit.setGeometry(QtCore.QRect(20, 120, 521, 31))
         self.log_textEdit.setObjectName("textEdit")
+        self.log_textEdit.setStyleSheet(font_textEdittextEdit)
         self.log_textEdit.setReadOnly(True)
 
         # Translate UI elements
@@ -95,14 +132,16 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Plant Data"))
-        self.Edit_data_Button.setText(_translate("Form", "Edit_data"))
-        self.Add_case_data_Button.setText(_translate("Form", "Add_data"))
-        self.Dell_Button.setText(_translate("Form", "Dell_data"))
-        self.reload_Button.setText(_translate("Form", "reload_Button"))
-        self.label.setText(_translate("Form", "plant_ID"))
-        self.label_2.setText(_translate("Form", "Name"))
-        self.label_3.setText(_translate("Form", "Type"))
-        self.label_4.setText(_translate("Form", "Age"))
+
+
+        self.Edit_data_Button.setText(_translate("Form", ""))
+        self.Add_case_data_Button.setText(_translate("Form", ""))
+        self.Dell_Button.setText(_translate("Form", ""))
+        self.reload_Button.setText(_translate("Form", ""))
+        # self.label.setText(_translate("Form", "plant_ID"))
+        # self.label_2.setText(_translate("Form", "Name"))
+        # self.label_3.setText(_translate("Form", "Type"))
+        # self.label_4.setText(_translate("Form", "Age"))
 
 
 if __name__ == "__main__":

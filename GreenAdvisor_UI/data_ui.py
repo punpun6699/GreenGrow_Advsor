@@ -16,13 +16,45 @@ class Ui_Form(object):
         # สร้างฟอนต์
 
 
-       # Form.setStyleSheet("background-color: #e8f5e9;")  # เขียวอ่อน
+       # Form.setStyleSheet("background-color: #e8f5e9;")  # เขียวอ่อ
 
         Form.setObjectName("Data")
         Form.resize(561, 438)
+
+        Form.setStyleSheet("""
+                                    QWidget {
+                                        background-image: url('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_UI/image/ACTION PLA.png');
+                                        background-position: center;
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                    }
+                                """)
+        font_textEdittextEdit = "background: transparent; border: none; color: #2e7d32;"
+
+        font_button = """
+                    QPushButton {
+                        background: transparent;
+                        border: none;
+                    }
+                   QPushButton:hover {
+                background-color: rgba(255, 255, 255, 50); /* สีขาวโปร่งแสง */
+            }
+                """
+
         self.tableView = QtWidgets.QTableView(Form)
         self.tableView.setGeometry(QtCore.QRect(30, 110, 511, 261))
         self.tableView.setObjectName("tableView")
+        self.tableView.setStyleSheet("""
+    QHeaderView::section {
+        background-color: #a5d6a7;  /* สีเขียวอ่อน */
+        color: black;  /* สีตัวอักษร */
+        font-weight: bold;
+        border: 2px solid #2e7d32; /* ขอบสีเขียวเข้ม */
+    }
+    QTableView {
+        color: #2e7d32; /* เปลี่ยนสีข้อความในตาราง */
+    }
+""")
 
         # สร้าง model
         self.model = QtGui.QStandardItemModel()
@@ -35,38 +67,22 @@ class Ui_Form(object):
 
         self.tableView.setModel(self.model)
 
-        self.label = QtWidgets.QLabel(Form);self.label.setGeometry(QtCore.QRect(30, 80, 58, 16));self.label.setObjectName("label")
+       # self.label = QtWidgets.QLabel(Form);self.label.setGeometry(QtCore.QRect(30, 80, 58, 16));self.label.setObjectName("label")
         #Button
         self.Add_data_Button = QtWidgets.QPushButton(Form);self.Add_data_Button.setGeometry(QtCore.QRect(30, 380, 111, 51));self.Add_data_Button.setObjectName("Add_data_Button")
-        self.Add_data_Button.setStyleSheet("""
-                    QPushButton {
-                        background-color: blue; /* Red background */
-                        color: white;          /* White text */
-                        border: none;
-                        font-weight: bold;
-                    }
-                    QPushButton:hover {
-                        background-color: darkblue; /* Dark red on hover */
-                    }
-                """)
+        self.Add_data_Button.setStyleSheet(font_button)
         self.Dell_Button = QtWidgets.QPushButton(Form);self.Dell_Button.setGeometry(QtCore.QRect(420, 380, 111, 51));self.Dell_Button.setObjectName("Dell_Button")
-        self.Dell_Button.setStyleSheet("""
-            QPushButton {
-                background-color: red; /* Red background */
-                color: white;          /* White text */
-                border: none;
-                font-weight: bold;
-            }
-            QPushButton:hover {
-                background-color: darkred; /* Dark red on hover */
-            }
-        """)
+        self.Dell_Button.setStyleSheet(font_button)
         self.data_Button = QtWidgets.QPushButton(Form);self.data_Button.setGeometry(QtCore.QRect(160, 380, 111, 51));self.data_Button.setObjectName("data_Button")
+        self.data_Button.setStyleSheet(font_button)
         self.seach_Button = QtWidgets.QPushButton(Form);self.seach_Button.setGeometry(QtCore.QRect(430, 60, 111, 51));self.seach_Button.setObjectName("data_Button_2")
+        self.seach_Button.setStyleSheet(font_button)
         self.reload_Button = QtWidgets.QPushButton(Form);self.reload_Button.setGeometry(QtCore.QRect(290, 380, 111, 51));self.reload_Button.setObjectName("data_Button_3")
+        self.reload_Button.setStyleSheet(font_button)
         self.textEdit = QtWidgets.QTextEdit(Form);self.textEdit.setGeometry(QtCore.QRect(90, 70, 321, 31));self.textEdit.setObjectName("textEdit")
+        self.textEdit.setStyleSheet(font_textEdittextEdit)
         #label
-        self.label_2 = QtWidgets.QLabel(Form);self.label_2.setGeometry(QtCore.QRect(250, 20, 161, 41));self.label_2.setObjectName("label_2")
+       # self.label_2 = QtWidgets.QLabel(Form);self.label_2.setGeometry(QtCore.QRect(250, 20, 161, 41));self.label_2.setObjectName("label_2")
 
 
         self.retranslateUi(Form)
@@ -75,13 +91,13 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Data"))
-        self.label.setText(_translate("Form", "plant id"))
-        self.Add_data_Button.setText(_translate("Form", "add data"))
-        self.Dell_Button.setText(_translate("Form", "Dell"))
-        self.data_Button.setText(_translate("Form", "Show Data"))
-        self.seach_Button.setText(_translate("Form", "seach"))
-        self.reload_Button.setText(_translate("Form", "Reload"))
-        self.label_2.setText(_translate("Form", "Plant info"))
+       # self.label.setText(_translate("Form", "plant id"))
+        self.Add_data_Button.setText(_translate("Form", ""))
+        self.Dell_Button.setText(_translate("Form", ""))
+        self.data_Button.setText(_translate("Form", ""))
+        self.seach_Button.setText(_translate("Form", ""))
+        self.reload_Button.setText(_translate("Form", ""))
+        #self.label_2.setText(_translate("Form", "Plant info"))
 
 
 if __name__ == "__main__":
@@ -91,4 +107,5 @@ if __name__ == "__main__":
     ui = Ui_Form()
     ui.setupUi(Form)
     Form.show()
+
     sys.exit(app.exec_())
