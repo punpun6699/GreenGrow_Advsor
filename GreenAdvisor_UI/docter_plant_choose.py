@@ -38,9 +38,9 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.radioButton.setText(_translate("Form", "RadioButton"))
-        self.radioButton_2.setText(_translate("Form", "RadioButton"))
-        self.radioButton_3.setText(_translate("Form", "RadioButton"))
+        self.radioButton.setText(_translate("Form", "มะม่วง"))
+        self.radioButton_2.setText(_translate("Form", "ทุเรียน"))
+        self.radioButton_3.setText(_translate("Form", "มังคุด"))
         self.label.setText(_translate("Form", "plant type"))
 
 

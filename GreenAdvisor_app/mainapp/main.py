@@ -40,7 +40,7 @@ def cls():
 
 
 def usemodel(data):    #use plant_recommendation_model.joblib (plant_recommendation model)
-    loade_PRM = joblib.load('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_Model/Model_Training/plant_recommendation_model_V2.joblib')
+    loade_PRM = joblib.load('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_Model/Model_Training/plant_recommendation_model_V3.joblib')
     prediction = loade_PRM.predict(data)
     ans = str(prediction)
     ui.textEdit_ANS.setText(str(ans[2:len(ans)-2]))

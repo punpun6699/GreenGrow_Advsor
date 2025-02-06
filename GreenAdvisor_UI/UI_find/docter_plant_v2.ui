@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>649</width>
+    <height>394</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QRadioButton" name="radioButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>60</y>
+     <width>99</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>RadioButton</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_2">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>60</y>
+     <width>99</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>RadioButton</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_3">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>60</y>
+     <width>99</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>RadioButton</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>10</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>plant type</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>50</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>101</y>
+     <width>611</width>
+     <height>201</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>320</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>320</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>320</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>320</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
