@@ -12,7 +12,7 @@ def edit_data():
         # ดึงค่าจาก UI
         plant_id = str(ui.plant_ID_textEdit.document().toPlainText())
         name = str(ui.Name_textEdit.document().toPlainText())
-        type = str(ui.Type_textEdit.document().toPlainText())
+        type = str(ui.Name_textEdit.document().toPlainText())
         age = int(ui.Age_textEdit.document().toPlainText())
 
         # ตรวจสอบว่า plant_id มีอยู่ในฐานข้อมูลหรือไม่
@@ -201,7 +201,7 @@ def Add_case_data():
         try:
             # Run the new Python script with plant_ID as an argument
             result = subprocess.run(
-                ["python", "/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_app/PopUP_app/data_popup_app/add_data_case.py", plant_id],
+                ["python", "/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_app/PopUP_app/data_popup_app/doc_data.py", plant_id],
                 capture_output=True,
                 text=True
             )
@@ -211,6 +211,8 @@ def Add_case_data():
             print(f"Error running plant_data.py: {e}")
     else:
         print("No plant_ID selected to send.")
+
+
 
 if __name__ == '__main__':
     print("plaant_data run")

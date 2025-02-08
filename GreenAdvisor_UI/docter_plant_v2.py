@@ -9,41 +9,48 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QHeaderView
 
 
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(649, 394)
-        self.radioButton = QtWidgets.QRadioButton(Form)
-        self.radioButton.setGeometry(QtCore.QRect(30, 60, 99, 20))
-        self.radioButton.setObjectName("radioButton")
-        self.radioButton_2 = QtWidgets.QRadioButton(Form)
-        self.radioButton_2.setGeometry(QtCore.QRect(170, 60, 99, 20))
-        self.radioButton_2.setObjectName("radioButton_2")
-        self.radioButton_3 = QtWidgets.QRadioButton(Form)
-        self.radioButton_3.setGeometry(QtCore.QRect(330, 60, 99, 20))
-        self.radioButton_3.setObjectName("radioButton_3")
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(290, 10, 71, 21))
-        self.label.setObjectName("label")
-        self.pushButton = QtWidgets.QPushButton(Form)
-        self.pushButton.setGeometry(QtCore.QRect(480, 50, 131, 41))
-        self.pushButton.setObjectName("pushButton")
+        Form.resize(1049, 394)
+        # self.radioButton = QtWidgets.QRadioButton(Form)
+        # self.radioButton.setGeometry(QtCore.QRect(230, 60, 99, 20))
+        # self.radioButton.setObjectName("radioButton")
+        # self.radioButton_2 = QtWidgets.QRadioButton(Form)
+        # self.radioButton_2.setGeometry(QtCore.QRect(370, 60, 99, 20))
+        # self.radioButton_2.setObjectName("radioButton_2")
+        # self.radioButton_3 = QtWidgets.QRadioButton(Form)
+        # self.radioButton_3.setGeometry(QtCore.QRect(530, 60, 99, 20))
+        # self.radioButton_3.setObjectName("radioButton_3")
+        self.textEdit_plant = QtWidgets.QTextEdit(Form)
+        self.textEdit_plant.setGeometry(QtCore.QRect(490, 10, 71, 21))
+        self.textEdit_plant.setObjectName("label")
+        self.textEdit_plant.setReadOnly(True)
+
+        # self.pushButton = QtWidgets.QPushButton(Form)
+        # self.pushButton.setGeometry(QtCore.QRect(680, 50, 131, 41))
+        # self.pushButton.setObjectName("pushButton")
+
         self.tableView = QtWidgets.QTableView(Form)
-        self.tableView.setGeometry(QtCore.QRect(20, 101, 611, 201))
+        self.tableView.setGeometry(QtCore.QRect(20, 101, 1011, 201))
         self.tableView.setObjectName("tableView")
+
+
+
         self.pushButton_2 = QtWidgets.QPushButton(Form)
-        self.pushButton_2.setGeometry(QtCore.QRect(30, 320, 101, 51))
+        self.pushButton_2.setGeometry(QtCore.QRect(230, 320, 101, 51))
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(Form)
-        self.pushButton_3.setGeometry(QtCore.QRect(190, 320, 101, 51))
+        self.pushButton_3.setGeometry(QtCore.QRect(390, 320, 101, 51))
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(Form)
-        self.pushButton_4.setGeometry(QtCore.QRect(360, 320, 101, 51))
+        self.pushButton_4.setGeometry(QtCore.QRect(560, 320, 101, 51))
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_5 = QtWidgets.QPushButton(Form)
-        self.pushButton_5.setGeometry(QtCore.QRect(510, 320, 101, 51))
+        self.pushButton_5.setGeometry(QtCore.QRect(710, 320, 101, 51))
         self.pushButton_5.setObjectName("pushButton_5")
 
         self.retranslateUi(Form)
@@ -52,15 +59,17 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.radioButton.setText(_translate("Form", "RadioButton"))
-        self.radioButton_2.setText(_translate("Form", "RadioButton"))
-        self.radioButton_3.setText(_translate("Form", "RadioButton"))
-        self.label.setText(_translate("Form", "plant type"))
-        self.pushButton.setText(_translate("Form", "PushButton"))
-        self.pushButton_2.setText(_translate("Form", "PushButton"))
-        self.pushButton_3.setText(_translate("Form", "PushButton"))
-        self.pushButton_4.setText(_translate("Form", "PushButton"))
-        self.pushButton_5.setText(_translate("Form", "PushButton"))
+
+        # self.radioButton.setText(_translate("Form", "มะม่วง"))
+        # self.radioButton_2.setText(_translate("Form", "ทุเรียน"))
+        # self.radioButton_3.setText(_translate("Form", "มังคุด"))
+
+        self.textEdit_plant.setText(_translate("Form", "plant type"))
+        # self.pushButton.setText(_translate("Form", "OK"))
+        self.pushButton_2.setText(_translate("Form", "1"))
+        self.pushButton_3.setText(_translate("Form", "2"))
+        self.pushButton_4.setText(_translate("Form", "3"))
+        self.pushButton_5.setText(_translate("Form", "4"))
 
 
 if __name__ == "__main__":
