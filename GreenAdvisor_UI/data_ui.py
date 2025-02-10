@@ -18,7 +18,7 @@ class Ui_Form(object):
 
        # Form.setStyleSheet("background-color: #e8f5e9;")  # เขียวอ่อ
 
-        Form.setObjectName("Data")
+        Form.setObjectName("plant info")
         Form.resize(561, 438)
 
         Form.setStyleSheet("""
@@ -90,7 +90,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Data"))
+        Form.setWindowTitle(_translate("Form", "plant info"))
        # self.label.setText(_translate("Form", "plant id"))
         self.Add_data_Button.setText(_translate("Form", ""))
         self.Dell_Button.setText(_translate("Form", ""))

@@ -18,7 +18,7 @@ class Ui_Form(object):
         Form.resize(1049, 394)
         Form.setStyleSheet("""
                                             QWidget {
-                                                background-image: url('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_UI/image/op.png');
+                                                background-image: url('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_UI/image/oof.png');
                                                 background-position: center;
                                                 background-repeat: no-repeat;
                                                 background-size: cover;
@@ -72,23 +72,23 @@ class Ui_Form(object):
 
 
         self.pushButton_2 = QtWidgets.QPushButton(Form)
-        self.pushButton_2.setGeometry(QtCore.QRect(230, 320, 101, 51))
+        self.pushButton_2.setGeometry(QtCore.QRect(410, 330, 101, 51))
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.setStyleSheet(font_button)
         self.pushButton_3 = QtWidgets.QPushButton(Form)
-        self.pushButton_3.setGeometry(QtCore.QRect(390, 320, 101, 51))
+        self.pushButton_3.setGeometry(QtCore.QRect(555, 330, 101, 51))
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_3.setStyleSheet(font_button)
-
-        self.pushButton_4 = QtWidgets.QPushButton(Form)
-        self.pushButton_4.setGeometry(QtCore.QRect(560, 320, 101, 51))
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.pushButton_4.setStyleSheet(font_button)
-
-        self.pushButton_5 = QtWidgets.QPushButton(Form)
-        self.pushButton_5.setGeometry(QtCore.QRect(710, 320, 101, 51))
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.pushButton_5.setStyleSheet(font_button)
+        #
+        # self.pushButton_4 = QtWidgets.QPushButton(Form)
+        # self.pushButton_4.setGeometry(QtCore.QRect(560, 320, 101, 51))
+        # self.pushButton_4.setObjectName("pushButton_4")
+        # self.pushButton_4.setStyleSheet(font_button)
+        #
+        # self.pushButton_5 = QtWidgets.QPushButton(Form)
+        # self.pushButton_5.setGeometry(QtCore.QRect(710, 320, 101, 51))
+        # self.pushButton_5.setObjectName("pushButton_5")
+        # self.pushButton_5.setStyleSheet(font_button)
 
 
         self.retranslateUi(Form)
@@ -106,8 +106,7 @@ class Ui_Form(object):
         # self.pushButton.setText(_translate("Form", "OK"))
         self.pushButton_2.setText(_translate("Form", ""))
         self.pushButton_3.setText(_translate("Form", ""))
-        self.pushButton_4.setText(_translate("Form", ""))
-        self.pushButton_5.setText(_translate("Form", ""))
+
 
 
 if __name__ == "__main__":
