@@ -16,6 +16,25 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1049, 394)
+        Form.setStyleSheet("""
+                                            QWidget {
+                                                background-image: url('/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_UI/image/op.png');
+                                                background-position: center;
+                                                background-repeat: no-repeat;
+                                                background-size: cover;
+                                            }
+                                        """)
+        font_textEdittextEdit = "background: transparent; border: none; color: #2e7d32;"
+
+        font_button = """
+                            QPushButton {
+                                background: transparent;
+                                border: none;
+                            }
+                           QPushButton:hover {
+                        background-color: rgba(255, 255, 255, 50); /* สีขาวโปร่งแสง */
+                    }
+                        """
         # self.radioButton = QtWidgets.QRadioButton(Form)
         # self.radioButton.setGeometry(QtCore.QRect(230, 60, 99, 20))
         # self.radioButton.setObjectName("radioButton")
@@ -29,29 +48,48 @@ class Ui_Form(object):
         self.textEdit_plant.setGeometry(QtCore.QRect(490, 10, 71, 21))
         self.textEdit_plant.setObjectName("label")
         self.textEdit_plant.setReadOnly(True)
+        self.textEdit_plant.setStyleSheet(font_textEdittextEdit)
 
         # self.pushButton = QtWidgets.QPushButton(Form)
         # self.pushButton.setGeometry(QtCore.QRect(680, 50, 131, 41))
         # self.pushButton.setObjectName("pushButton")
 
         self.tableView = QtWidgets.QTableView(Form)
-        self.tableView.setGeometry(QtCore.QRect(20, 101, 1011, 201))
+        self.tableView.setGeometry(QtCore.QRect(20, 90, 1011, 230))
         self.tableView.setObjectName("tableView")
+        self.tableView.setStyleSheet("""
+            QHeaderView::section {
+                background-color: #a5d6a7;  /* สีเขียวอ่อน */
+                color: black;  /* สีตัวอักษร */
+                font-weight: bold;
+                border: 2px solid #2e7d32; /* ขอบสีเขียวเข้ม */
+            }
+            QTableView {
+                color: #2e7d32; /* เปลี่ยนสีข้อความในตาราง */
+            }
+        """)
 
 
 
         self.pushButton_2 = QtWidgets.QPushButton(Form)
         self.pushButton_2.setGeometry(QtCore.QRect(230, 320, 101, 51))
         self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_2.setStyleSheet(font_button)
         self.pushButton_3 = QtWidgets.QPushButton(Form)
         self.pushButton_3.setGeometry(QtCore.QRect(390, 320, 101, 51))
         self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_3.setStyleSheet(font_button)
+
         self.pushButton_4 = QtWidgets.QPushButton(Form)
         self.pushButton_4.setGeometry(QtCore.QRect(560, 320, 101, 51))
         self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_4.setStyleSheet(font_button)
+
         self.pushButton_5 = QtWidgets.QPushButton(Form)
         self.pushButton_5.setGeometry(QtCore.QRect(710, 320, 101, 51))
         self.pushButton_5.setObjectName("pushButton_5")
+        self.pushButton_5.setStyleSheet(font_button)
+
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -66,10 +104,10 @@ class Ui_Form(object):
 
         self.textEdit_plant.setText(_translate("Form", "plant type"))
         # self.pushButton.setText(_translate("Form", "OK"))
-        self.pushButton_2.setText(_translate("Form", "1"))
-        self.pushButton_3.setText(_translate("Form", "2"))
-        self.pushButton_4.setText(_translate("Form", "3"))
-        self.pushButton_5.setText(_translate("Form", "4"))
+        self.pushButton_2.setText(_translate("Form", ""))
+        self.pushButton_3.setText(_translate("Form", ""))
+        self.pushButton_4.setText(_translate("Form", ""))
+        self.pushButton_5.setText(_translate("Form", ""))
 
 
 if __name__ == "__main__":

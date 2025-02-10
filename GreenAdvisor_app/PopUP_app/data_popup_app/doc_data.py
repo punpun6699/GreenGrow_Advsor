@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow , QMessageBox ,QHeaderView
 from GreenAdvisor_UI import docter_plant_v2
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5 import QtGui,QtCore
-
+plant_id_G = "N/A"
 # def seach(table_view):
 #     if ui.radioButton.isChecked():
 #         seach_id = "มะม่วง"
@@ -84,7 +84,7 @@ def load_data_into_table(table_view):
             table_view.setModel(model)
 
             ui.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Interactive)
-            ui.tableView.setColumnWidth(0, 10)  # คอลัมน์ที่ 1 กว้าง 150 px
+            ui.tableView.setColumnWidth(0, 50)  # คอลัมน์ที่ 1 กว้าง 150 px
             ui.tableView.setColumnWidth(1, 100)  # คอลัมน์ที่ 2 กว้าง 200 px
             ui.tableView.setColumnWidth(2, 200)  # คอลัมน์ที่ 3 กว้าง 180 px
             ui.tableView.setColumnWidth(3, 250)  # คอลัมน์ที่ 4 กว้าง 180 px
@@ -113,12 +113,50 @@ def main():
         plant_id = sys.argv[1]
         print(f"Received plant_ID: {plant_id}")
         ui.textEdit_plant.setText(str(plant_id))
+        global plant_id_G
+        plant_id_G = plant_id
         load_data_into_table(ui.tableView)
     else:
         print("No plant_ID provided.")
 
 # def seach_ck():
 #     seach(ui.tableView)
+def get_selected_case_id(table_view):
+    """
+    Get the plant_ID from the selected row in the QTableView.
+    """
+    selection_model = table_view.selectionModel()
+    selected_indexes = selection_model.selectedRows()
+
+    if selected_indexes:
+        # Get the plant_ID from the first selected row (index 0 corresponds to 'plant_ID' column)
+        type = selected_indexes[0].sibling(selected_indexes[0].row(), 0).data()
+        print(f"Selected plant_ID: {type}")
+        return type
+    else:
+        print("No row selected.")
+        return None
+def call():
+    """
+    Open the plant_data.py script and pass the selected plant_ID as a command-line argument.
+    """
+    # Get the selected plant_ID
+    type = get_selected_case_id(ui.tableView)
+    global plant_id_G
+
+    if plant_id_G and type:  # ตรวจสอบว่า plant_id_G มีค่า
+        try:
+            result = subprocess.run(
+                ["python", "/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_app/PopUP_app/data_popup_app/add_data_case.py", type, str(plant_id_G)],
+                capture_output=True,
+                text=True
+            )
+            print("Script Output:", result.stdout)
+            print("Script Errors:", result.stderr)
+        except Exception as e:
+            print(f"Error running add_data_case.py: {e}")
+    else:
+        print("No plant_ID selected to send.")
 
 
 if __name__ == '__main__':
@@ -144,5 +182,6 @@ if __name__ == '__main__':
     #ui.pushButton.clicked.connect(seach_ck)
     # Connect the selection change to a function that gets the selected plant_ID
 
+    ui.pushButton_2.clicked.connect(call)
     # Execute the application
     sys.exit(app.exec_())

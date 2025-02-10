@@ -45,7 +45,7 @@ class Ui_Form(object):
         #textEdit
         self.case_id_textEdit = QtWidgets.QTextEdit(Form);self.case_id_textEdit.setGeometry(QtCore.QRect(100, 30, 161, 31));self.case_id_textEdit.setObjectName("case_id_textEdit");self.case_id_textEdit.setReadOnly(True)
         self.case_id_textEdit.setStyleSheet(font_textEdittextEdit)
-        self.Type_textEdit = QtWidgets.QTextEdit(Form);self.Type_textEdit.setGeometry(QtCore.QRect(100, 80, 161, 31));self.Type_textEdit.setObjectName("Type_textEdit")
+        self.Type_textEdit = QtWidgets.QTextEdit(Form);self.Type_textEdit.setGeometry(QtCore.QRect(100, 80, 161, 31));self.Type_textEdit.setObjectName("Type_textEdit");self.Type_textEdit.setReadOnly(True)
         self.Type_textEdit.setStyleSheet(font_textEdittextEdit)
         self.plant_id_textEdit= QtWidgets.QTextEdit(Form);self.plant_id_textEdit.setGeometry(QtCore.QRect(380, 30, 161, 31));self.plant_id_textEdit.setObjectName("plant_id_textEdit");self.plant_id_textEdit.setReadOnly(True)
         self.plant_id_textEdit.setStyleSheet(font_textEdittextEdit)
@@ -73,6 +73,7 @@ class Ui_Form(object):
         # self.label_2.setText(_translate("Form", "Plant ID"))
         # self.label_3.setText(_translate("Form", "Type"))
         # self.label_4.setText(_translate("Form", "info"))
+        self.info_textEdit.setText("NULL")
         self.Add_pushButton.setText(_translate("Form", ""))
         self.Cls_pushButton.setText(_translate("Form", ""))
         self.pushButton_3.setText(_translate("Form", ""))

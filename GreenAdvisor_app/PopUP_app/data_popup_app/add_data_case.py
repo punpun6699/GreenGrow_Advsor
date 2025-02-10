@@ -84,13 +84,14 @@ def clear(x):
 def clear_bt():
     clear(1);calldata()
 def main():
-    # Check if plant_ID is provided as an argument
-    if len(sys.argv) > 1:
-        plant_id = sys.argv[1]
-        print(f"Received plant_ID: {plant_id}")
+    if len(sys.argv) > 2:
+        case_type = sys.argv[1]
+        plant_id = sys.argv[2]
+        print(f"Received case_type: {case_type}, plant_ID: {plant_id}")
         ui.plant_id_textEdit.setText(str(plant_id))
+        ui.Type_textEdit.setText(str(case_type))
     else:
-        print("No plant_ID provided.")
+        print("Insufficient arguments provided.")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)  # Create the main application object
