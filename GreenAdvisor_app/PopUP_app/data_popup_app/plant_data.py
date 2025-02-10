@@ -201,7 +201,7 @@ def Add_case_data():
         try:
             # Run the new Python script with plant_ID as an argument
             result = subprocess.run(
-                ["python", "/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_app/PopUP_app/data_popup_app/doc_data.py", plant_id],
+                ["python", "/Users/panpom/PycharmProjects/GreenGrow_Advisor/GreenAdvisor_app/PopUP_app/doc_popup_app/doc_data.py", plant_id],
                 capture_output=True,
                 text=True
             )

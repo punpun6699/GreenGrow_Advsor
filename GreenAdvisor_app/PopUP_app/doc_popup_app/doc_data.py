@@ -47,7 +47,7 @@ plant_id_G = "N/A"
 def load_data_into_table(table_view):
     plant_id = ui.textEdit_plant.document().toPlainText()
     # Connect to the SQLite database
-    conn = sqlite3.connect('/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/Main_data.db')  # Database path
+    conn = sqlite3.connect('/Database/Main_data.db')  # Database path
     cursor = conn.cursor()
 
     cursor.execute("SELECT Type FROM Main_data WHERE plant_id = ?", (plant_id,))
@@ -62,7 +62,7 @@ def load_data_into_table(table_view):
         print("ไม่พบข้อมูล")
 
 
-    conn = sqlite3.connect('/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/Main_data.db')  # Database path
+    conn = sqlite3.connect('/Database/Main_data.db')  # Database path
     cursor = conn.cursor()
     if plant_type != "None":
         try:

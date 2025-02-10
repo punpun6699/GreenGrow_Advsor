@@ -2,7 +2,8 @@ import sqlite3
 import pandas as pd
 
 # 🔹 กำหนดเส้นทางไฟล์ Excel และฐานข้อมูล
-excel_path = "/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/export_data/Book2_translated.xlsx"
+excel_path_user = str(input("Excel path >>> "))
+excel_path = f"/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/export_data/{excel_path_user}.xlsx"
 db_path = "/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/Main_data.db"
 
 # 🔹 อ่านข้อมูลจาก Excel
@@ -13,7 +14,22 @@ conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
 # 🔹 กำหนดชื่อตารางในฐานข้อมูล
-table_name = "docter_en"  # เปลี่ยนเป็นชื่อตารางที่ต้องการ
+table_name = str(input("Table name >>> ")).strip()  # ลบช่องว่างส่วนเกินออก
+
+# 🔹 ตรวจสอบว่าตารางมีอยู่หรือไม่
+cursor.execute(f"SELECT name FROM sqlite_master WHERE type='table' AND name='{table_name}'")
+table_exists = cursor.fetchone()
+
+if table_exists:
+    confirm = input(f"⚠️ Table '{table_name}' already exists. Do you want to delete it? (y/n) >>> ").strip().lower()
+    if confirm == 'y':
+        print(f"🗑️ Deleting table '{table_name}'...")
+        cursor.execute(f"DROP TABLE {table_name}")
+        conn.commit()
+    else:
+        print("❌ Operation cancelled. No data was modified.")
+        conn.close()
+        exit()
 
 # 🔹 บันทึกข้อมูลลง SQLite
 df.to_sql(table_name, conn, if_exists="replace", index=False)
