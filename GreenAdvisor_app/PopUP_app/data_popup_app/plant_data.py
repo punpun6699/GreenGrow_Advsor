@@ -11,7 +11,7 @@ def edit_data():
     try:
         # ดึงค่าจาก UI
         plant_id = str(ui.plant_ID_textEdit.document().toPlainText())
-        name = str(ui.Name_textEdit.document().toPlainText())
+        name = str(ui.Type_textEdit.document().toPlainText())
         type = str(ui.Name_textEdit.document().toPlainText())
         age = int(ui.Age_textEdit.document().toPlainText())
 

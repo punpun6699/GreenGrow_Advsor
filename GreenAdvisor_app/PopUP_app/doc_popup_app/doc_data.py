@@ -47,7 +47,7 @@ plant_id_G = "N/A"
 def load_data_into_table(table_view):
     plant_id = ui.textEdit_plant.document().toPlainText()
     # Connect to the SQLite database
-    conn = sqlite3.connect('/Database/Main_data.db')  # Database path
+    conn = sqlite3.connect('/Users/panpom/PycharmProjects/GreenGrow_Advisor/Database/Main_data.db')  # Database path
     cursor = conn.cursor()
 
     cursor.execute("SELECT Type FROM Main_data WHERE plant_id = ?", (plant_id,))
@@ -62,8 +62,7 @@ def load_data_into_table(table_view):
         print("ไม่พบข้อมูล")
 
 
-    conn = sqlite3.connect('/Database/Main_data.db')  # Database path
-    cursor = conn.cursor()
+
     if plant_type != "None":
         try:
             # Fetch data for the specific plant_id from the plant_data table
@@ -108,6 +107,12 @@ def load_data_into_table(table_view):
     conn.close()
 
 def main():
+    # plant_id = "P_001"
+    # ui.textEdit_plant.setText(str(plant_id))
+    # global plant_id_G
+    # plant_id_G = plant_id
+    # load_data_into_table(ui.tableView)
+
     # Check if plant_ID is provided as an argument
     if len(sys.argv) > 1:
         plant_id = sys.argv[1]
@@ -119,8 +124,8 @@ def main():
     else:
         print("No plant_ID provided.")
 
-# def seach_ck():
-#     seach(ui.tableView)
+def seach_ck():
+    seach(ui.tableView)
 def get_selected_case_id(table_view):
     """
     Get the plant_ID from the selected row in the QTableView.
@@ -176,8 +181,8 @@ if __name__ == '__main__':
    # win.show()  # Show the main window
 
   # Use 'tableView' from your UI file
-    main()
     win.show()  # Show the main window
+    main()
     # Connect buttons to their respective actions
     #ui.pushButton.clicked.connect(seach_ck)
     # Connect the selection change to a function that gets the selected plant_ID
