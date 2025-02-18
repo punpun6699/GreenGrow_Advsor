@@ -124,8 +124,8 @@ def main():
     else:
         print("No plant_ID provided.")
 
-def seach_ck():
-    seach(ui.tableView)
+# def seach_ck():
+#     seach(ui.tableView)
 def get_selected_case_id(table_view):
     """
     Get the plant_ID from the selected row in the QTableView.
